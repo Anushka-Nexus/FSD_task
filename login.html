@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">  
+    <style>
+        html{
+            font-family: sans-serif;
+            
+        }
+        .pop{
+        
+          height: 40px;
+          width: 240px;
+          border: 1px solid  rgba(157, 157, 234, 0.6);
+          font-weight: bold;
+          font-size: 1.5rem;
+          position: relative;
+          margin: 200px auto;
+          padding: 50px auto;
+        }
+        #target{
+            display: none;
+            height: 100vh;
+            width: 100vw;
+            background-color: rgb(0, 0, 0,0.2);
+            z-index: 6;
+            position: fixed;
+            top: 0;
+            left: 0;
+            
+        }
+        #b1{
+            z-index: 1;
+        }
+        #b1:checked~#target{
+            display: block;
+           
+        }
+      .page{
+         width: 500px;
+         height: 600px;
+         background-color : white;
+         position: relative; 
+         top: 50%;
+         left: 50%;
+         transform: translate(-50%,-50%);
+         margin-top: 20px;
+         border: 3px solid rgba(157, 157, 234, 0.2);
+         border-radius: 1.2rem;
+      }
+      .page>.quicklogin>.text{
+        padding: 10px;
+        font-size: 18px;
+        display: flex;
+        flex-direction: column ;
+        
+      }
+      #gog-log{
+         height: 50px;
+         width: 480px;
+         border: 0.1rem solid rgba(150, 135, 135, 0.2);
+         border-radius: 0.3rem;
+         background-color: rgba(232, 232, 240, 0.3);
+         text-align: center;
+         padding: 10px;
+         box-sizing: border-box;
+         margin-top: 0.5rem;
+      }
+      a{
+        text-decoration: none;
+        
+      }
+      a:hover{
+        text-decoration: underline;
+        
+      }
+      #icons{
+         filter: grayscale(1);
+         margin-left:50px ;
+      }
+      #icons:hover{
+        filter: grayscale(0);
+        cursor: pointer;
+      }
+      img{
+        border-radius: 100%;
+        height: 30px;
+        width: 30px;
+        top: 10px;
+        left: 10px;
+      }
+      #icons{
+        border: 0.1rem solid rgb(0, 0, 0,0.2) ;
+        border-radius: 100%;
+        height: 35px;
+        width: 35px;
+        
+      }  
+      .image-container{
+         background-color: white;     
+         border: .01rem solid rgba(0, 0, 0, 0.15);          
+         width: 40px;           
+         height: 40px;            
+         border-radius: 100%;           
+         display: flex;            
+         justify-content: center;          
+         align-items: center; 
+         position: relative;      
+      }
+      .login{
+        height: 250px;
+        display: flex;
+        padding: 5px auto;
+        flex-direction: column;
+        gap: 10px;
+        
+      }
+      .emailogin{
+        font-size: 1rem;
+        padding: 5px;
+        flex-grow: 1 !important;
+        
+      }
+      #signup{
+        background-color: rgb(35, 189, 27);
+        color: white;
+        text-align: center;
+        width: 90%;
+        height: 50px;
+        margin-left:1.5rem;
+        border-radius: 0.5rem;
+         font-weight: 400;
+        font-size: 1.2rem;
+      }
+      #inp{
+        width: 450px;
+        height: 40px;
+        margin-left: 1rem;
+
+      }
+      .close{
+        position: absolute;
+        left: 100%;
+        top: 0;
+        transform: translate(-50%,-50%);
+        background-color: black;
+        color: white;
+        border-radius: 100%;
+        height: 30px;
+        width: 30px;
+        font-size: 1rem;
+        text-align: center;
+      }
+    </style>
+</head>
+
+<body>
+  <div class="pop">
+     <input type="checkbox" id="b1" >
+     <label for="b1">Click here to login</label>
+ 
+     <div id="target">
+         <div class="page">
+            <div class="quicklogin">
+                 <div class="text"><b style="font-size: 20px;">Login </b>
+                     <span>New user? <a href="">Register now</a></span>
+                     <span id="gog-log">Continue with goggle</span>
+                </div>
+               
+            </div>
+            <div class="image">
+                  <div class="img-container">
+                      <i class="fa-brands fa-facebook" id="icons" style="color: rgb(6, 179, 242);"></i> 
+                      <i class="fa-brands fa-github" id="icons" style="color: #f21707;"></i>
+                      <i class="fa-brands fa-linkedin" id="icons"  style="color: #314d7d;"></i>
+                      <i class="fa-brands fa-reddit" id="icons" style="color: #dd2c79;"></i>
+               </div>
+            </div>
+            <br>
+             <span style="text-align: center; font-family: sans-serif; font-size:16px;"><center>or</center></span>
+             <div class="login">
+                 <div class="emailogin">
+                      <label for="">Username or Email</label><br>
+                      <input type="email" name="" id="inp" placeholder="Username or email"><br>
+                      <label for="">Enter Password</label><br>
+                      <input type="password" name="" id="inp" placeholder="Enter Password">
+                      <div style="display: flex; justify-content:space-between;">
+                          <div>
+                              <input type="checkbox" name="" id="Remember">
+                              <label for="Remember">Remember me</label>
+                          </div>
+                              <span><a href="">Forget Password</a></span>
+                          
+                      </div>
+                 </div>
+             </div>
+             
+                 <button id="signup">Sign in</button>
+                 <p style="font-size: .75rem; margin-left: 25px;">By creating this account, you agree to our <b>Privacy Policy & Cookie Policy.</b> </p>
+                <button class="close">
+                 <label for="b1">
+                  <center><i class="fa-solid fa-times"></i>  </center> 
+                </label> 
+             </button>    
+         </div>
+         
+     </div>  
+    
+  </div> 
+  
+</body>
+</html>

@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+          .mob{
+            height: 500px;
+            width: 300px;
+            background-color: black;
+            color: white;
+            border: 2px solid white;
+            display: flex;
+            gap: 5px;
+            flex-direction: row;
+             flex-wrap: wrap;   
+            margin-left: 10px;
+            margin-right: 10px;
+            justify-content:center;
+          }
+          .clas{
+               height: 60px;
+              flex-basis: 60px;
+              margin-left: 5px;
+              margin-right: 5px;;
+               border-radius: 10px;
+               border: 2px solid white;
+               font-size: 3rem;
+               text-align: center;
+          }
+          .ch0{
+            margin-top: 14px;
+            margin-left: 15px;
+            height: 50px;
+            flex-basis: 210px;
+            
+          }
+          .ch10{
+            font-size: 2rem;
+          }
+          .ch12{
+            font-size: 2rem;
+          }
+          .article{
+            height: 600px;
+            width: 460px;
+            background-color: rgb(37, 37, 86);
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            gap: 1rem;
+             justify-content: space-around;
+          }
+          .child{
+            border-radius: 8px;
+            margin-top: 10px;
+            background-color: bisque;
+            font-size: 2rem;
+            text-align: center;
+            margin-left: 10px;
+           
+          }
+          .chh1{
+            height: 90px;
+            width: 400px;
+            margin-left: 16px;
+
+          }
+          .chh2{
+            height: 160px;
+            width: 210px;
+          }
+           .chh3{
+            height: 160px;
+            width: 210px;
+           
+          }
+          .chh4{
+            height: 200px;
+            width:420px ;
+          }
+           .chh5{
+            height: 50px;
+            width:420px ;
+            margin-bottom: 10PX;
+          }
+           /* .chh6{
+            height: 200px;
+            width:90px ;
+          }
+          .chh7{
+            height: 200px;
+            width:90px ;
+          } */
+          .main{
+            width: 1000px;
+            height: 500px;
+            background-color: rgb(51, 50, 50);
+            display: flex;
+            flex-direction: row;
+            gap: 8px;
+          }
+          .main1{
+              margin-top: 10px;
+              width: 490px;
+              height: 480px;
+              background-color: black; 
+              display: flex;
+              flex-wrap: wrap;
+              gap: 8px;
+            }
+            .box{
+              margin-top:10px ;
+              margin-left: 8px;
+              width: 225px;
+              height: 220px;
+              background-color: white;
+            }
+            img{
+               margin-left: 5px;
+               margin-top: 5px;
+            }
+            .layout{
+              width: 500px;
+              height: 650px;
+              display: flex;
+              flex-direction: row;
+              gap: 1rem;
+              align-items: end;
+              background-color: burlywood;
+              color: black;
+            }
+            .graph-a{
+              height: 500px;
+              width: 80px;
+              background-color: rgb(90, 142, 187);
+              margin-bottom: 20px;
+              margin-left: 1rem;
+            }
+            .graph-b{
+              height: 300px;
+              width: 80px;
+              background-color: rgb(90, 142, 187);
+              margin-bottom: 20px;
+              margin-left: 1rem;
+            }
+            .graph-c{
+              height: 400px;
+              width: 80px;
+              background-color: rgb(90, 142, 187);
+              margin-bottom: 20px;
+              margin-left: 1rem;
+            }
+            .graph-d{
+              height: 530px;
+              width: 80px;
+              background-color: rgb(90, 142, 187);
+              margin-bottom: 20px;
+              margin-left: 1rem;
+            }
+            .menu{
+              width: 550px;
+              height: 500px;
+              background-color: red;
+              display: flex;
+              flex-direction: row;
+              gap: 0.5rem;
+              flex-wrap: wrap;
+              /* align-items: center; */
+            }
+            .menuu-1{
+               height: 100px;
+               flex-basis: 560px;
+               background-color: yellow;
+               border-radius: 10px;
+               margin-left: 5px;
+               margin-top: 5px;
+               margin-right: 5px;
+               
+            }
+            .menuu-2{
+              height: 260px;
+              flex-basis:300px ;
+              background-color: yellow;
+              margin-left: 5px;
+              border-radius: 10px;
+              /* display: inline-block; */
+            }
+           .menuu-3{
+            height: 260px;
+            flex-basis: 230px;
+            background-color: yellow;
+            border-radius: 10px;
+            /* display: inline-block; */
+           }
+           .menuu-4{
+             height: 100px;
+            flex-basis: 230px;
+            background-color: yellow;
+            border-radius: 10px;
+            /* display: inline-block; */
+            margin-left: 5px;
+           }
+           .menuu-5{
+            height: 100px;
+            flex-basis:300px ;
+            background-color: yellow;
+            border-radius: 10px;
+           }
+          
+    </style>
+</head>
+<body>
+    <h2>PIN PAD</h2>
+    <div class="mob">
+       <div class="clas ch0"> </div>
+       <div class="clas ch1">1</div>
+       <div class="clas ch2">2</div>
+       <div class="clas ch3">3</div>
+       <div class="clas ch4">4</div>
+       <div class="clas ch5">5</div>
+       <div class="clas ch6">6</div>
+       <div class="clas ch7">7</div>
+       <div class="clas ch8">8</div>
+       <div class="clas ch9">9</div>
+       <div class="clas ch10">Del</div>
+       <div class="clas ch11">0</div>
+       <div class="clas ch12">Ok</div>
+
+      
+    </div> 
+    <fieldset>
+      <h2>Article format</h2>
+       <div class="article">
+         <div class="child chh1"> header</div>
+         <div class="child chh2"><br><CENTER>Article <br>description</CENTER></div>
+         <div class="child chh3"><br>INFO</div>
+         <div class="child chh4">MAIN</div>
+         <div class="child chh5">FOOTER</div>
+         
+       </div>
+    </fieldset>
+    <fieldset>
+     <h2>Amazon flashcards</h2>
+      <div class="main">
+        <div class="main1">
+           <div class="box 1"><img src="../media/sugar1.jpg" alt="cosmetics" height="210px" width="215px"></div>
+           <div class="box 2"><img src="../media/sugar2.jpeg" alt="cosmetics" height="210px" width="215px"></div>
+           <div class="box 3"><img src="../media/sugar3.jpeg" alt="cosmetics" height="210px" width="215px"></div>
+           <div class="box 4"><img src="../media/sugar4.jpg" alt="cosmetics" height="210px" width="215px"></div>
+        </div>
+        <div class="main1">
+          <div class="box 5"><img src="../media/sugar5.jpeg" alt="cosmetics" height="210px" width="215px"></div>
+          <div class="box 6"><img src="../media/lakme.jpeg" alt="cosmetics" height="210px" width="215px"></div>
+          <div class="box 7"><img src="../media/mamaearth.jpeg" alt="cosmetics" height="210px" width="215px"></div>
+          <div class="box 8"><img src="../media/maybelline.jpeg" alt="cosmetics" height="210px" width="215px"></div>
+        </div>
+      </div>
+      
+    </fieldset>
+    <fieldset>
+       <h3>Graph</h3>
+        <div class="layout">
+             <div class="graph-a"></div>
+             <div class="graph-b"></div>
+             <div class="graph-c"></div>
+             <div class="graph-d"></div>
+        </div>
+    </fieldset>
+    <fieldset>
+      <h3>Template layout</h3>
+      <div class="menu">
+        <div class="menuu-1"></div>
+        <div class="menuu-2"></div>
+        <div class="menuu-3"></div>
+        <div class="menuu-4"></div>
+        <div class="menuu-5"></div>
+      </div>
+    </fieldset>
+</body>
+</html>

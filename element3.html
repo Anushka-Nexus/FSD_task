@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+          #main{
+             background-color: rgb(70, 66, 66);
+             height: 300px;
+             width: 500px;
+             margin: 100px auto;
+             display: grid;
+             grid-template-rows: 1fr 1fr 1fr;
+             grid-template-columns: 1fr;
+             gap: 4px;
+             transform: rotate(90deg);
+          }
+          #element{
+            border: 2px solid rgb(231, 41, 73);
+            margin: 10px auto;
+            width: 90%;
+            font-size: 2rem;
+          }
+          #element:hover{
+            height: 155px;
+            
+          }
+    </style>
+</head>
+<body>
+    <div id="main">
+        <div class="element1" id="element"><center>HOVER ME</center></div>
+        <div class="element2" id="element"><center>HOVER ME</center></div>
+        <div class="element3" id="element"><center>HOVER ME</center></div>
+    </div>
+</body>
+</html>

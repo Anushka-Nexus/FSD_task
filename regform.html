@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body bgcolor="#D7EEFF">
+   
+ <form action="acc.html">
+     <DIV>
+          <fieldset> 
+             <legend>Registration form</legend> 
+             <!-- name label nm1 -->
+             <label for="nm1">Name :-</label>
+               <input type="text" name="nm1" placeholder="Your first name" required>
+               <input type="text" name="nm1" placeholder="Your middle name" required>
+               <input type="text" name="nm1" placeholder="Your last name" required><br><br>
+               <!-- labeling for email -->
+              <label for="em1">Email :-</label>
+                <input type="email" required><br><br>
+                 <!-- labeling for password -->
+               <label for="ps1">Password :-</label>
+                 <input type="password"  required size="12" ><br><br>
+               <!-- LABELING FOR CONTACT NO. -->
+                <label for="ph1">Phone :-</label>
+                  <input type="tel" size="10" min="10" required><br><br>
+                <!-- labeling for gender -->
+                <label for="gen">Gender :-</label>
+                  <input type="radio" name="gen" value="male">Male
+                  <input type="radio" name="gen" value="female">Female
+                  <input type="radio" name="gen" value="none">Prefer not to say<br><br>
+                  <!-- birth date -->
+                   <label for="bd">DOB:-</label>
+                   <input type="date" name="bd1" id="bd" min="2000" max="2010">
+                  <!-- labeling for language --> &nbsp;&nbsp;
+                <label for="lang">Language :-</label>
+                  <select name="se" id="lang">
+                    <option value="English">English</option>
+                    <option value="Marathi">Marathi</option>
+                    <option value="Hindi">Hindi</option>
+                    <option value="Telugu">Telugu</option>
+                    <option value="BENGALI">Bengali</option>
+                  </select><br><br>
+                  <!-- address -->
+                <label for="add">Address:-</label><br>
+                 <textarea name="add" rows="3" cols="40"></textarea><br><br>
+                 Country :-
+                 <select name="add"   required>
+                    <option value="India">India</option>
+                    <option value="USA">USA</option>
+                    <option value="Japan">Japan</option>
+                     <option value="bhutan">Bhutan</option>
+                 </select><br><br>
+                 Postal code :- <input type="number" size="6">
+                 <br><br><br>
+                <center> <input type="submit"> </center>
+          </fieldset>
+     </DIV>
+ </form>
+</body>
+</html>
