@@ -1,0 +1,102 @@
+CONDITIONAL SELECTOR AND PSEUDO SELECTOR
+
+    PSEUDO SELECTOR
+    format : 
+    pseudo selector : selector {
+
+    }
+    types:
+    child selector 
+       parent child {
+        ...
+       }
+       ex :
+       ul li : first-child{
+        color : red;
+       }
+
+    group nth selector
+     format:
+        group :nth-child(index){
+
+        }
+
+        group :nth-child(even){
+            
+        }
+        group :nth-child(odd){
+            
+        }
+        group :first-child{
+            
+        }
+         group :last-child{
+            
+        }
+    direct child selector 
+     format:
+     parent > child {
+
+      }
+    same parent element 
+    (1) same parent and adjacent element
+       format :
+        belongs to same parent 
+          .first + .second {
+            properties..
+          }
+           inke bich koi aur element nhi reh skta hai
+   (2) same parent and alternet element
+       format :
+        belongs to same parent 
+          .first ~ .second {
+            properties..
+          }
+          inke bich koi aur element reh skta hai
+
+    :hover :- it is an event which occur when our cursor is directed towards the targeted element
+    syntax :-
+       tag :hover{
+         properties..
+       }
+       .element:hover{
+        properties..
+       }
+     :focus 
+      syntax;-
+        tag :focus{
+         properties..
+       }
+       .element:focus{
+        properties..
+       } 
+       pseudo element
+     :input :: placeholder{
+        
+     }
+
+    BEFORE PSEUDO element
+
+     it will appear before our targeted element .
+     it is used for
+
+     format:-
+
+     element::before{
+      content:"...."
+      other properties..
+     }
+
+      AFTER PSEUDO element
+
+     it will appear after our targeted element .
+     it is used for
+
+     format:-
+
+     element::after{
+      content:"...."
+      other properties..
+     }
+
+     

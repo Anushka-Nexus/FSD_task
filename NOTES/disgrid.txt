@@ -1,0 +1,13 @@
+
+box-sizing :content-box/border-box;
+
+display: grid;
+PARENT properties
+
+gap: unit;
+ 
+ grid-template-row : jitne row utne units 
+  ex: grid-template-row: 200px 200px 200px ; yha pr ye three rows bnayga
+ grid-template-column : jitne columns utne units
+  ex:-grid-template-column: 1fr 1fr 2fr ; yha pr ye 4 columns  bnayga
+        

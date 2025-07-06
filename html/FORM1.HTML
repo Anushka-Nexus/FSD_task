@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+        <form action="acc.html" method="get">
+        <fieldset>
+                 <legend><centre><h1><B><i>ADMISSION FORM</B></i></centre></h1></legend>
+                <H2>Basic Details</H2>
+             <lable id="n1">ENTER YOUR FULL NAME:-</lable><input type="text" placeholder="enter your name" id="n1" required><br><br>
+             <label id="n2">ENTER YOUR FATHER'S NAME:- </label><input type="text" placeholder="enter the name" id="n2" required><br><br>
+             <label id="n3"> YOUR MOTHER'S NAME:-</label> <input type="text" placeholder="enter the name" id="n3" required><br><br>
+             <label id="birth">DATE OF BIRTH:-</label><input type="date" id="birth"><BR><BR>
+             <label id="GENDER">GENDER</label> :-<input type="radio" name="GENDER" value="MALE" >MALE  <input type="radio" name="GENDER" value="FEMALE" >  FEMALE<BR><br>
+              <label id="TEL1">CONTACT NUMBER :-</label><input type="tel" id="TEL1"><br><br>
+            <label id="SAL">SALUTATION</label>:-<input type="radio" name="SALUTATION" value="MR" id="SAL" >MR 
+                          <input type="radio" name="SALUTATION" value="MS" >MS
+                          <input type="radio" name="SALUTATION" value="MRS" >MRS
+                          <input type="radio" name="SALUTATION" value="OTHER" >OTHER<BR><br>
+            <label id="CAT">CATEGORY:-<input type="radio" name="CATEGORY" value="SC" id="CAT">SC</label>
+                             <input type="radio" name="CATEGORY" value="ST">ST 
+                             <input type="radio" name="CATEGORY" value="SBC">SBC 
+                             <input type="radio" name="CATEGORY" value="NT">NT
+                             <input type="radio" name="CATEGORY" value="OBC">OBC<BR><BR>
+                  <form>
+                  <fieldset>
+                  <legend><h2>Resident details </h2></legend>
+                <label for="add"> MAILING ADDRESS :-</label> <textarea id="add" rows="3" ></textarea><BR><BR>
+                  CITY :-:-<select><option  value="NAGPUR">NAGPUR</option>
+                    <option  value="MUMBAI">MUMBAI</option>
+                    <option  value="NASHIK">NASHIK</option>
+                    <option  value="RAIPUR">RAIPUR</option>
+                        <option  value="BHOPAL">BHOPAL</option></select><BR><br>
+                 <label for="ST"></label> STATE :-<select id="ST"><option  value="MAHARASHTRA">MAHARASHTRA</option>
+                    <option  value="MADHYA PRADESH">MADHYA PRADESH</option>
+                    <option  value="UTTER PRADESH">UTTER PRADESH</option>
+                    <option  value="CHHATTISGRAH">CHHATTISGRAH</option>
+                        <option  value="GOA">GOA</option></select><BR><br>
+                  POSTAL CODE :-<input type="number"><br><br>
+                  EMAIL :-<input type="email"><br><br>
+                    
+                        </fieldset>
+                  </form>
+                  <form><fieldset>
+                        <legend><h2>EDUCATION QUALIFICATION</h2></legend>
+                        STUDENT ID :-<input type="number"placeholder="enter your student id"><br><br>
+                       <label id="pass" >CREATE PASSWORD OF THE STUDENT ID :-</label>
+                       <input type="password" placeholder="enter your password" required minlength="10"><br><br>
+                       <label for="course">CHOOSE YOUR COURSE :-/<label> <select id="course"><option  value="BCA">BCA</option>
+                            <option  value="BVOC">BVOC</option>
+                            <option  value="BSC CS">BSC CS</option>
+                            <option  value="BSC IT">BSC IT</option>
+                                <option  value="BTECH">BTECH</option></select><BR><br>
+                       <label for="sub"> Choose your extra subjects :</label><select id="sub">
+                                                   <option value="COMPUTER">COMPUTER<br>
+                                                   <option value="SOFTWARE ENGINEERING"> ENGINEERING<br>
+                                                   <option value="DATA ANALYSIS"> DATA ANALYSIS<br>
+                                                   <option value="AI"> AI<br>
+                                                    <option value="CYBER SECURITY"> CYBER SECURITY<br></select>
+                         
+                         <label for="per"> Select your 12th percentage :-</label>
+                         <input type="file" id="per" required accept="file.jpg"><br><br>
+                         <label for="12" >Upload your 12th Marksheet :-</label>
+                         <input type="file" id="12" required accept="file.jpg"><br><br>
+                          <label for="Aadhar">enter your Aadhar card :-</label> <input type="file" id="Aadhar"><br><br>
+                          <label for="pic" your passport size photo :-> </label> <input type="image" id="pic"><br><br>
+                        
+                    </fieldset>
+                  </form>
+                 <centre><input type="submit" >SUBMIT<input type="reset">RESET<input type="button" value="CANCEL">CANCEL
+
+
+                 
+        </fieldset>
+    
+</body>
+</html>

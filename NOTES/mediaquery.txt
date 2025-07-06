@@ -1,0 +1,62 @@
+MEDIA QUERY
+
+breaking points
+
+max-width : 576px ; (mobile device)
+
+min-width : 600px ; and max-width : 990px; (tablet device)
+
+ max-width : 990px; (laptop device)
+
+
+ MEDIA QUERY :-
+    
+   syntax :-
+      media value and (condition) {
+        the changes 
+      }
+
+      value
+      screen
+      projector
+      audio
+      all
+
+  ex :- 
+   <style>
+    body{
+      background-color : red;
+    }
+    .parent{
+        display : grid ;
+         grid-template-columns: repeat(3,1fr);
+         grid-template-rows: repeat(4,1fr);
+         gap: 6px;
+         border
+    }
+    .mini{
+        background-color : white;
+    }
+     media screen and (max-width : 576px) {
+       background-color : blue ;
+       /* mobile device*/
+      }
+       media screen and (min-width : 600px and max-width :990px) {
+       background-color : yellow;
+       /* tablet device*/
+      }
+   </style>
+   <body>
+      /* now we will apply media query on grid layout */
+      <div class="parent">
+           <div class="mini K1"></div>
+            <div class="mini K2"></div>
+            <div class="mini K3"></div>
+            <div class="mini K4"></div>
+            <div class="mini K5"></div>
+             <div class="mini K6"></div>
+            <div class="mini K7"></div>
+            <div class="mini K8"></div>
+            <div class="mini K9"></div> 
+      </div>
+   </body>

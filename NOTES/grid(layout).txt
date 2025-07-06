@@ -1,0 +1,51 @@
+FLEX LAYOUT
+   display : flex;
+ PARENT properties***
+   flex-direction : (value)row[default],column,row-reverse, column-reverse
+    it specify the direction of the flex layout
+
+ gap : value\unit;
+   it specify the gap between two elements 
+
+ flex-wrap :  wrap\nowrap\wrap-reverse;
+              wrap:- it 
+
+ alignment : it can be done vertically and horizontally
+  for flex-direction : row;
+  horizontal : justify-content 
+  vertical : align-items
+
+  for flex-direction : column;
+  vertical : justify-content 
+  horizontal: align-items
+
+  justify-content : [values] start(left), end(right), center, space-between/around/evenly;
+
+  space-between : this will push the child elements to the edges 
+  space-around : this will provide equal distance between two elements both from left and right side
+  space-evenly : this will provide equal space between all the elements
+
+  align-items : start(top),end(bottom), center,stretch;
+
+  CHILD
+  order : default value 0 we can give any number to ordering(arranging ) our child elements
+
+  flex-grow :it is a child property which can be used to acquiring the remaining space by the child child element
+  syntax:-
+   flex-grow:(default value)0 it will not do anything'
+              1 it will grow the element to acquire the remaining space
+
+  flex-basis : unit
+    this property is used to specify the static size of the child element
+   it is a relative property which we use when one wants to specify the size of the child-element rather than make it shrink
+
+  flex-shrink : 0(times) matlb ye element shrink nhi hoga
+                 1(times) make ye element 1times shrink hoga 
+                 2 matlb ye element dusre child element is 2 times matlb double shrink hoga.
+
+  shorthand property
+    flex : grow shrink basis;
+
+      task :- search css flex on the internet and make 5 flex layout 
+
+ 

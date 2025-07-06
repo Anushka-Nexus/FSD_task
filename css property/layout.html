@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .main{
+           height: 200vh;
+           width: 100vw;
+           font-family: sans-serif;
+           background-color: black;
+        } 
+        .main1{
+           height: 130vh;
+           width: 100%;
+           background-color: black;
+           display: flex;
+           gap: 2rem;
+        } 
+        .text{
+            display: flex;
+            justify-content: space-between;
+            margin: 30px 50px;
+            height: 90px;
+            width: 90%;
+            
+        }
+        #viewbtn{
+           height: 40px;
+           width: 90px;
+           border-radius: .5rem;
+           background-color: rgba(128, 128, 128,0.3);
+           border: 2px solid white;
+           color: beige;
+           position: absolute;
+           right: 0;
+           margin-top: 10px;
+           margin-right: 300px;
+        }
+        #viewbtn:hover{
+            transform: scale(1.1);
+            background-color: rgb(75, 121, 75);
+            color: beige;  
+        }
+        .box{
+            margin-top: 80px ;
+            margin-left: 150px;
+            height:850px;
+            width:1100px;
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            grid-template-rows: 1fr 1fr;
+            position:absolute;
+            gap: 1rem !important ;
+        }
+        .course{
+            height: 380px;
+            width: 300px;
+            border-radius: 15px;
+            margin : 20px;
+            background-color: rgba(54, 52, 52, 0.4);
+            color: beige;
+            
+        }
+        .course:hover{
+            border: 0.15rem solid rgb(251, 253, 251);
+             
+        }
+        img{
+            width: 300px;
+            height: 180px;
+            border-top-right-radius: 15px ;
+            border-top-left-radius: 15px;
+            margin-top: 1px;
+        }
+        .description{
+            margin-left: 15px;
+            margin-top: 20px;
+            height: 80px;
+            width: 270px;
+            font-size: 1.2rem;
+            font-weight: 600;
+        
+        }
+        .level{
+            height: 30px;
+            width: 260px;
+            margin-left: 20px;
+            color: grey;
+            font-size: 0.9rem;
+            display: inline-block;
+        }
+        .lvl{
+            height: 30px;
+            width: 200px;
+            display: inline-block;
+            box-sizing: border-box;
+            margin-left: 8px;
+            position: absolute;
+            margin-top: 4px;
+        }
+        .explore{
+            height: 34px;
+            width: 120px;
+            margin-left: 180px;
+            margin-top: 20px;
+        }
+        .explorebtn{
+            height: 30px;
+            width: 100px;
+            border-radius: 10px;
+            background-color: rgba(128,128,128,0.1);
+            color:rgb(75, 121, 75);
+           
+        
+        }
+        .explorebtn:hover{
+           transform: scale(1.1);
+           background-color: rgb(75, 121, 75);
+           color: beige;
+         }
+        .main2{
+            height: 190px;
+            width: 1050px;
+            margin-left: 170px;
+            color: beige;
+          
+        }
+        .categories{
+            display: grid;
+            height: 100%;
+            width: 100%;
+            /* background-color: blue; */
+            grid-template-columns: repeat(4,1fr);
+            grid-template-rows: repeat(2,1fr);
+            row-gap:4px;
+            column-gap: 1rem;
+            margin-top: 8px;
+        }
+        .category{
+         
+            margin-top: 0.50rem;
+            height: 80px;
+            border-radius: 0.3rem;
+            color: rgba(245, 245, 220,0.8);
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+        .opt{
+            height: 50px;
+            width: 200px;
+            margin-left: 10px;
+            margin-top: 1rem;
+        
+        }
+        .logo{
+            height: 50px;
+            width: 50px;
+            position: static;
+            border-radius: 4px !important;
+            display: inline-block !important;
+        }
+        .random-text{
+            height: 50px;
+            width: 100px;
+            display: inline-block !important;
+            /* background-color: blueviolet; */
+            box-sizing: border-box;
+            position: absolute;
+            margin-top: 1rem;
+            margin-left: 0.25rem;
+        }
+        .category:hover{
+            border: 0.1rem solid white;
+        }
+   </style>
+</head>
+<body>
+    <div class="main">
+      <div class="main1">
+          <div class="text">
+             <span style="color: beige; font-size: 2rem; font-weight: 600;margin-left: 115px; margin-top: 10px;">Courses</span>
+             <button id="viewbtn">View all</button>
+          </div>
+          <div class="box">
+              <div class="course c1">
+                  <img src="../media/placement.jpg" alt="placement">
+                   <div class="description"><span>Placement Taiyari with DSA</span></div>
+                   <div class="level">
+                      <img src="../media/level.jpg" alt="" style="border-radius: 100%; height: 20px;width: 20px;">
+                         <div class="lvl">Beginner to Advanced</div>
+                  </div>
+                  <div class="explore">
+                   <button class="explorebtn">Explore Now</button>
+                 </div>
+              </div>
+              <div class="course c2">
+                 <img src="../media/dsalayout.jpg" alt="dsa" >
+                  <div class="description"><span>DSA to Development :A Complete Guide </span></div>
+                  <div class="level">
+                      <img src="../media/level.jpg" alt="" style="border-radius: 100%; height: 20px;width: 20px;">
+                        <div class="lvl">Beginner to Advanced</div>
+                  </div>
+                   <div class="explore">
+                      <button class="explorebtn" >Explore Now</button>
+                   </div>
+              </div>
+             <div class="course c3">
+                  <img src="../media/backend.jpg" alt="backend" >
+                  <div class="description"><span>JAVA Backend Development :LIVE </span></div>
+                  <div class="level">
+                      <img src="../media/level.jpg" alt="" style="border-radius: 100%; height: 20px;width: 20px;">
+                         <div class="lvl">Intermediate to Advanced</div>
+                  </div>
+                    <div class="explore">
+                     <button class="explorebtn">Explore Now</button>
+                   </div>
+             </div>
+             <div class="course c4">
+                  <img src="../media/tech.jpg" alt="interview">
+                  <div class="description"><span>Tech Interview 101 - From DSA to System Design for Working Professionals</span></div>
+                  <div class="level">
+                      <img src="../media/level.jpg" alt="" style="border-radius: 100%; height: 20px;width: 20px;">
+                           <div class="lvl">Beginner to Advanced</div>
+                  </div>
+                   <div class="explore"> 
+                     <button class="explorebtn">Explore Now</button>
+                   </div>
+             </div>
+             <div class="course c5">
+                <img src="../media/fsd.jpg" alt="">
+                 <div class="description"><span>Full Stack Development with React & Node JS - Live</span></div>
+                 <div class="level">
+                      <img src="../media/level.jpg" alt="" style="border-radius: 100%; height: 20px;width: 20px;">
+                         <div class="lvl">Beginner to Advanced</div>
+                  </div>
+                   <div class="explore">
+                     <button class="explorebtn">Explore Now</button>
+                   </div>
+             </div>
+             <div class="course c6">
+                 <img src="../media/c++.jpg" alt="C++ COURSE">
+                 <div class="description"><span>C++ Programming Course Online - Complete Beginner to Advanced</span></div>
+                 <div class="level">
+                      <img src="../media/level.jpg" alt="" style="border-radius: 100%; height: 20px;width: 20px;">
+                        <div class="lvl">Beginner to Advanced</div>
+                  </div>
+                   <div class="explore"> 
+                     <button class="explorebtn">Explore Now</button>
+                   </div>
+             </div>
+             
+          </div>
+          
+      </div>
+       <div class="main2">
+          <div class="text1">
+             <span style="color: beige; font-size: 2rem; font-weight: 600;">Course Categories</span>
+          </div>
+          <div class="categories">
+               <div class="category op1" style="background-color: rgb(250, 166, 138);">
+                    <div class="opt">
+                         <img src="../media/logoall.png" alt="" class="logo" >
+                         <div class="random-text">All</div>
+                    </div>
+               </div>
+              <div class="category op2" style="background-color: rgb(59, 11, 104);">
+                    <div class="opt">
+                         <img src="../media/ibm.png" alt="" class="logo" >
+                         <div class="random-text">Certification Course</div>
+                    </div>
+              </div>
+              <div class="category op3" style="background-color: rgb(68, 132, 211);">
+                      <div class="opt">
+                         <img src="../media/dsalogo.png" alt="" class="logo" >
+                         <div class="random-text">DSA / Placement</div>
+                    </div>
+              </div>
+              <div class="category op4" style="background-color: rgb(226, 169, 255);">
+                    <div class="opt">
+                         <img src="../media/testinglogo.png" alt="" class="logo" >
+                         <div class="random-text">Development and Testing</div>
+                    </div>
+              </div>
+              <div class="category op5" style="background-color: rgb(149, 200, 149);">
+                    <div class="opt">
+                         <img src="../media/machinelogo.png" alt="" class="logo" >
+                         <div class="random-text">Machine Learning & Data Science</div>
+                    </div>
+              </div>
+              <div class="category op6" style="background-color: rgb(144, 161, 192);">
+                   <div class="opt">
+                         <img src="../media/proglogo.png" alt="" class="logo" >
+                         <div class="random-text">Programming Languages</div>
+                    </div>
+              </div>
+              <div class="category op7" style="background-color: darkcyan;">
+                   <div class="opt">
+                         <img src="../media/cloudlogo.png" alt="" class="logo" >
+                         <div class="random-text">Cloud / DevOps</div>
+                    </div>
+              </div>
+              <div class="category op8" style="background-color: rgb(152, 152, 181);">
+                    <div class="opt">
+                         <img src="../media/gatelogo.png" alt="" class="logo" >
+                         <div class="random-text">GATE</div>
+                    </div>
+              </div>
+          </div>
+    </div>
+    </div>
+</body>
+</html>

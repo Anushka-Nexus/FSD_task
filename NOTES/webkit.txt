@@ -1,0 +1,41 @@
+
+ What is -webkit- in CSS?
+ans:-
+ -webkit- is a special prefix used in CSS to make certain styles work in WebKit-based browsers like:
+  Google Chrome
+  Safari
+  Some Android browsers
+
+Why do we use it?
+ans:-
+ Different browsers (Chrome, Firefox, Safari, etc.) understand CSS slightly differently — especially for new or advanced effects like:
+ gradients
+ animations
+ shadows
+ transitions
+So, we add a -webkit- version to make sure those effects work in Chrome and Safari, especially older versions.
+
+Some properties are :-
+  property                  description                                    example
+ webkit-border-radius  :	Rounds corners	                            -webkit-border-radius: 10px;
+-webkit-box-shadow     :    Adds shadow to(behind) elements	           -webkit-box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+-webkit-transform	     :    Rotates, scales, or moves elements	        -webkit-transform: rotate(30deg);
+-webkit-transition     :	Smooth change in CSS property	            -webkit-transition: all 0.3s ease;
+-webkit-animation      :	Controls CSS animation	                    -webkit-animation: fadeIn 1s ease;
+-webkit-linear-gradient:	Gradient background	                      background:-webkit-linear-gradient(blue, pink);
+-webkit-text-fill-color	:   Changes text color	                        -webkit-text-fill-color: white;
+-webkit-text-stroke	   :    Adds stroke (outline) to text	            -webkit-text-stroke: 1px black;
+-webkit-background-clip :	Clips background to text	                 -webkit-background-clip: text;
+-webkit-line-clamp      :	Limits text to N lines (with ellipsis)	     Used with display: -webkit-box;
+-webkit-user-select	    :   Prevents text selection                    	-webkit-user-select: none;
+-webkit-mask-image      :	Applies a mask (like a stencil) to hide parts of an element
+-webkit-filter	        :   Applies filters like blur, brightness, contrast etc.
+-webkit-opacity         :	Same as opacity, older support
+-webkit-clip-path       :	Clips a shape from the element (circle, polygon, etc.)
+-webkit-box-reflect     :	Creates a mirror reflection below/above/side of element
+-webkit-user-select	    :   Disables or enables text selection
+-webkit-tap-highlight-color :	Controls highlight color when tapping on mobile (default is blue on links)
+-webkit-touch-callout	 : Prevents callout (like copy/save image) on long press in iOS Safari
+-webkit-overflow-scrolling : touch	  Enables momentum scroll on mobile
+-webkit-appearance      :	Resets element appearance (like buttons, inputs) to be fully customizable
+-webkit-cursor-visibility	: Used in WebKit-based TV browsers to hide cursor automatically

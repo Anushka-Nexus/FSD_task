@@ -1,0 +1,37 @@
+text-shadow 
+format:-
+text-shadow : direction spread color;
+ex:- 0px(right\horizontal) 10px(bottom)  10px(spread) yellow;
+
+box-shadow
+format:-
+box-shadow : direction spread color;
+ex:- box-shadow: 0px(right\horizontal) 10px(bottom)  10px(spread) yellow;
+
+Display property 
+
+display : (values)none , inline, block, inline-block;
+   VALUES:-
+none :- will remove the element from the canvas(body)
+inline :-will let other elements to be in the same row but will not support external height and width
+block :- will not let other elements to be in the same row butwill let other elements to be in the same row 
+inline-block :- will let other elements to be in the same row , and will let other elements to be in the same row 
+
+Display: flex , grid(layout)
+flex :- uni-directional layout
+       will let other elements to be in the same row 
+        will let other elements to be in the same row 
+         row(horizontal) and column(vertical)
+         it have some parent properties and child properties
+         some properties are wrap,alignment,direction
+
+Grid :- multi-directional layout
+        One can manipulate the row and columns at once
+        it have different parent and child properties
+        grid layout have grid lines
+        we use grid lines to create row and columns
+        properties are:-
+         grid-template-row
+         grid-template-column
+        
+
