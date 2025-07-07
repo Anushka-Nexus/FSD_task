@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+           .main{
+               perspective: 1000px;
+                height: 500px;
+                width: 500px;
+           }
+          .cube{
+              margin: 100px auto;
+              margin-left: 100px;
+              height: 100%;
+              width: 100%;
+              transform-style: preserve-3d;
+              position: relative;
+               animation: spin 10s linear infinite ;
+          }
+          .face{
+              height: 400px;
+              width: 400px;
+              position: absolute;
+              background-color: rgba(192, 115, 188, 0.6);
+              /* animation: spin 10s linear infinite ; */
+              border: 1px solid black;
+              
+          }
+          .front{
+            transform: rotateY(0deg) translateZ(200px);
+          }
+          .back{
+            transform: rotateY(180deg) translateZ(200px);
+          }
+          .left{
+            transform: rotateY(-90deg) translateZ(200px);
+          }
+          .right{
+            transform: rotateY(90deg) translateZ(200px);
+          }
+          .upper{
+            transform:  rotateX(90deg) translateZ(200px);
+          }
+          .bottom{
+            transform: rotateX(-90deg) translateZ(200px);
+          }
+          @keyframes spin {
+              from {
+                 transform: rotateX(-20deg) rotateY(0deg);
+                 }
+              to {
+                 transform: rotateX(-20deg) rotateY(360deg); 
+                }
+          }
+    </style>
+</head>
+<body>
+    <div class="main">
+        <div class="cube">
+           <div class="face front"></div>
+           <div class="face back"></div>
+           <div class="face left"></div>
+           <div class="face right"></div>
+           <div class="face upper"></div>
+           <div class="face bottom"></div>
+        </div>
+    </div>
+</body>
+</html>
