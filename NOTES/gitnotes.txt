@@ -1,0 +1,10 @@
+ GIT HUB
+ what is git hub?
+ ans :- In a simple words, github is a platform where people can store and share their code .
+
+ why we use github?
+ ans :- (1)programmer use it to collaborate 
+        (2)companies use it to manage the software
+        (3)learners use it to practice coding and share projects.
+
+ 
