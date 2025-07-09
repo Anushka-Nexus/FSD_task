@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="bootstrap-5.3.7-dist/css/bootstrap-utilities.css">
+    <style>
+        .flex1{
+            width: 605px;
+            height: 760px; 
+        }
+        .child{
+            background-color: rgb(147, 188, 121);
+            width: 200px;
+            height: 200px;
+        }
+        .ch1{width: 400px; height: 120px;}
+        .ch2,.ch3{ height: 400px; }
+        .flex2{
+            height: 610px;
+            width: 580px;
+            background-color: rgb(46, 28, 7);
+        }
+        .member{
+            background-color: blueviolet;
+            width: 280px;
+            height: 300px;
+        }
+        .mem{
+            background-color: rgb(105, 219, 181);
+            height: 140px;
+            width: 135px;
+        }
+        .m1{background-color: rgb(46, 28, 7);}
+        .flex3{
+            height: 640px;
+            width: 580px;
+        }
+        .group{
+             background-color: rgb(213, 165, 211);
+             height: 200px;
+             width: 280px;
+            }
+        .g1{
+            width: 500px;
+        }
+        .flex4{
+            height: 590px;width: 580px;
+        }
+        .box{
+            background-color: rgb(134, 56, 141);
+            height: 100px;
+            width: 295px;
+        }
+        .b2,.b3{
+            height: 340px;
+            width: 280px;
+        }
+        .b4{
+            width: 135px;
+            height: 140px;
+            background-color: rgb(32, 28, 37);
+        }
+        .flex5{
+            height: 600px;
+            width: 860px;
+        }
+        .i1,.i5{
+            height: 100px;
+            width: 850px;
+        }
+        .i2,.i3,.i4{
+            width: 220px;
+            height: 360px;
+        }
+    </style>
+</head>
+<body>
+    <fieldset>
+        <h1>flex layout 1</h1>
+          <div class="flex1 bg-primary d-flex gap-2 flex-row flex-wrap align-items-center fs-3">
+              <div class="child ch1 flex-grow-1">Header</div>
+              <div class="child ch2">Images</div>
+              <div class="child ch3 flex-grow-1">Description</div>
+              <div class="child ch4 flex-grow-1 ">Footer</div> 
+          </div>
+    </fieldset>
+    <fieldset>
+          <h1>flex layout 2</h1>
+          <div class="flex2 d-flex gap-2 flex-wrap">
+              <div class="member"></div>
+              <div class="member m1 d-flex gap-1 flex-wrap">
+                  <div class="mem m2"></div>
+                  <div class="mem m3"></div>
+                  <div class="mem m4"></div>
+                  <div class="mem m5"></div>
+              </div>
+              <div class="member m1 d-flex gap-1 flex-wrap">
+                  <div class="mem m2"></div>
+                  <div class="mem m3"></div>
+                  <div class="mem m4"></div>
+                  <div class="mem m5"></div>
+              </div>
+              <div class="member m6"></div>
+          </div>
+    </fieldset>
+    <fieldset>
+         <h1>flex layout 3</h1>
+         <div class="flex3 d-flex flex-row gap-2 flex-wrap justify-content-center bg-primary">
+             <div class="group g1 flex-grow-1"></div>
+             <div class="group g2"></div>
+             <div class="group g3"></div>
+             <div class="group g4 flex-grow-1"></div>
+         </div>
+    </fieldset>
+    <fieldset>
+         <h1>flex layout 4</h1>
+          <div class="flex4 d-flex flex-row gap-2 flex-wrap justify-content-center bg-success fs-3">
+             <div class="box b1 flex-grow-1">Header</div>
+             <div class="box b2">Article</div>
+             <div class="box b3 d-flex flex-row gap-1 flex-wrap align-items-end text-light">
+                 <div class="b4">Images</div>
+                 <div class="b4">Images</div>
+             </div>
+             <div class="box b5 flex-grow-1">Ending</div>
+          </div>
+    </fieldset>
+    <fieldset>
+           <h1>flex layout 5</h1>
+          <div class="flex5 bg-info d-flex flex-wrap flex-row gap-1 fs-2 text-danger justify-content-center">
+              <div class="item i1 bg-dark flex-grow-1">Title</div>
+              <div class="item i2 bg-success">News </div>
+              <div class="item i3 bg-secondary flex-grow-1">Description</div>
+              <div class="item i4 bg-success">News</div>
+              <div class="item i5 bg-dark flex-grow-1">Footer</div>
+          </div>
+    </fieldset>
+</body>
+</html>
