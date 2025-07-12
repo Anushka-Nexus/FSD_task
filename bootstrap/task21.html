@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="bootstrap-5.3.7-dist/css/bootstrap.css">
+    <style>
+         .grid1{
+            height: 600px;width: 600px; 
+         }
+         .gr0{ height: 100px;width: 400px;}
+         .gr1{ height: 595px;width: 198px;}
+         .gr2{ height: 300px;width: 400px; top: 20%;}
+         .gr3{height: 200px;width: 400px; position: absolute;top: 60%;}
+         .grid2{height: 500px;width: 500px;}
+         .c1{ height: 90px;}
+         .c2{ height: 320px;}
+         .grid3{height: 650px;width:800px;}
+         .child1{ height:75px;}
+         .child2{height: 350px;background-color: rgb(107, 59, 69);}
+         .child3{height: 350px; background-color: rgb(83, 61, 102);}
+         .child4{height: 150px;background-color: rgb(100, 100, 193);}
+         .grid4{ height:600px;width: 800px;}
+         .r1{height: 75px;}
+         .r2{height: 250px;}
+         .r3{height: 250px;background-color: darkorchid;}
+         .r4{height: 150px;}
+         .r5{height: 100px;background-color: hotpink;}
+         .grid5{height:600px;width:1200px;}
+         .layout{height: 600px;}
+         .lay1{height: 250px;background-color: coral;}
+         .lay2{height: 250px;background-color: chartreuse;}
+         .lay3{height: 225px; background-color: rgb(168, 105, 204)}
+         .lay4{height:125px;}
+         .lay5{height: 225px;background-color: darkkhaki;}
+    </style>
+</head>
+<body>
+      <fieldset>
+          <h2>GRID LAYOUT 1</h2>
+          <div class="container grid1 bg-info border border-black">
+                    <div class="row">
+                          <div class="col gr0 col-10 bg-secondary fs-dark fs-2 border border-light border-3">Heading</div>
+                          <div class="col gr1  bg-danger fs-4 border border-light border-3">Description</div>
+                          <div class="col gr2 col-2 bg-success fs-2 position-absolute border border-light border-3">Images </div>
+                          <div class="col gr3 bg-dark text-light fs-2 border border-light border-3"> Images</div>
+                    </div>
+          </div>
+      </fieldset><hr>
+     
+      <fieldset>
+       <h2>GRID LAYOUT 2</h2>
+           <div class="container grid3 bg-secondary border border-black border-3">
+                   <div class="row">
+                      <div class="col child1 col-12 bg-warning text-dark fs-2 border border-light border-2">NAME</div>
+                   </div>
+                   <div class="row">
+                       <div class="col child2 col-8 text-light fs-2 border border-light border-2">Content</div>
+                       <div class="col child3 col-4 text-light fs-2 border border-light border-2">Side-bar</div>
+                   </div>
+                   <div class="row">
+                      <div class="col child4 col-4 text-light fs-2 border border-light border-2">Pictures</div>
+                      <div class="col child4 col-4 bg-info text-light fs-2 border border-light border-2">Pictures</div>
+                      <div class="col child4 col-4 bg-secondary text-dark fs-2 border border-light border-2">Pictures</div>
+                   </div>
+                   <div class="row">
+                       <div class="col child1 col-12 bg-danger text-dark fs-2 border border-light border-2">End</div>
+                   </div>
+           </div>
+      </fieldset><hr>
+       <fieldset>
+          <h2>GRID LAYOUT 3</h2>
+             <div class="container grid2 bg-primary border border-black border-2">
+                    <div class="row">
+                         <div class="col c1 col-12 bg-info text-dark fs-2">HEADER</div>
+                    </div>
+                    <div class="row">
+                         <div class="col c2 col-6 bg-danger">TEXT</div>
+                         <div class="col c2 col-6 bg-warning"></div>
+                    </div>
+                     <div class="row">
+                         <div class="col c1 col-12 bg-success text-dark fs-2">Footer</div>
+                    </div>
+             </div>
+      </fieldset><hr>
+       <fieldset>
+          <h2>GRID LAYOUT 4</h2>
+            <div class="container grid3 bg-dark border border-warning border-2">
+                 <div class="row">
+                     <div class="col r1  col-12 text-dark bg-primary fs-2 border border-light border-2">Header</div>
+                 </div>
+                  <div class="row">
+                     <div class="col r1 col-12 text-dark bg-warning fs-2 border border-light border-2">Navigation</div>
+                 </div>
+                 <div class="row">
+                      <div class="col r2 col-3 text-light bg-success fs-4">Side-content</div>
+                      <div class="col r3 col-6 text-light fs-2">Main-content</div>
+                      <div class="col r2 col-3 text-light bg-success fs-4">Side-content</div>
+                 </div>
+                 <div class="row">
+                    <div class="col r4 col-3 bg-primary border border-light border-2">Icons</div>
+                    <div class="col r4 col-3 bg-secondary border border-light border-2">Picture</div>
+                    <div class="col r4 col-3 bg-danger border border-light border-2">Photo</div>
+                    <div class="col r4 col-3 bg-info border border-light border-2">Photo</div>
+                 </div>
+                  <div class="row">
+                     <div class="col r5  col-12 text-dark fs-2 border border-light border-2">Header</div>
+                 </div>
+            </div>
+       </fieldset><hr>
+       <fieldset>
+            <h2>GRID LAYOUT 5</h2>
+            <div class="container grid5 bg-info">
+                <div class="row">
+                      <div class="col layout col-6">
+                           <div class="row">
+                              <div class="col col-7 lay1  border border-light border-2"></div>
+                              <div class="col col-5 lay2  border border-light border-2"></div>
+                           </div>
+                           <div class="row">
+                                 <div class="col col-4 lay3  border border-light border-2"></div>
+                                  <div class="col col-8 bg-primary lay3  border border-light border-2"></div>
+                           </div>
+                           <div class="row">
+                               <div class="col col-12 lay4 bg-dark  border border-light border-2"></div>
+                           </div>
+                      </div>
+                      <div class="col layout col-6">
+                          <div class="row">
+                               <div class="col col-5 lay2 bg-danger border border-light border-2"></div>
+                               <div class="col col-7 lay1 bg-info border border-light border-2"></div>
+                          </div>
+                          <div class="row">
+                               <div class="col col-12 lay4 bg-success  border border-light border-2"></div>
+                          </div>
+                          <div class="row">
+                                <div class="col col-4 lay5 border border-light border-2"></div>
+                                <div class="col col-4 lay5 bg-warning border border-light border-2"></div>
+                                <div class="col col-4 lay5 bg-primary border border-light border-2"></div>
+                                
+                          </div>
+                      </div>
+                </div> 
+            </div>
+       </fieldset>
+</body>
+</html>
