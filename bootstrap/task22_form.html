@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="bootstrap-5.3.7-dist/css/bootstrap.css">
+    <style>
+        .container-fluid{ width: 1100px; background-color: rgb(171, 129, 230);}
+        .container{
+            width: 900px;
+            height: 650px;
+            background-color: rgb(171, 129, 230);
+            color: black;
+            font-size: 1.3rem;
+        }
+        #floatingPassword{width: 600px; height: 25px; margin-left: 0.7rem;}
+        .btn-primary{position: absolute; left: 50%;}
+        .t-btn{position:absolute;left: 40%;}
+    </style>
+</head>
+<body>
+        <div class="container-fluid">
+            <br>
+            <h4 class="ms-5">Registration Form</h4>
+            <div class="container">
+              <form action="">
+                 <fieldset>
+                  <div class="row">
+                     <label for="name" class="col col-md">Enter Name:</label>
+                     <input type="text" name="" id="name" class="form-control col" placeholder="Enter First name" required>
+                     <input type="text" name="" id="name" class="form-control col ms-4" placeholder="Enter Last name" required>
+                  </div>
+                  <div class="row mt-4">
+                       <!-- labeling for email -->
+                      <label for="em1" class=" col-2 col-md">Email :-</label>
+                      <input type="email" id="em1" class="form-control col" required>
+                  </div>
+                     <div class="d-flex gap-4 mt-4">
+                          <label for="" class="mt-4 ">Password :</label>
+                          <div class="form-floating">
+                             <input type="password" class="form-control p-aut0" id="floatingPassword" placeholder="Password" required>
+                             <label for="floatingPassword">Password</label>
+                          </div>
+                     </div>
+                  <div class="row mt-4">
+                       <!-- labeling for language -->
+                     <label for="lang" class="col col-2">Language :-</label>
+                     <select name="se" id="lang" class="form-select col col-md">
+                       <option value="English">English</option>
+                       <option value="Marathi">Marathi</option>
+                       <option value="Hindi">Hindi</option>
+                       <option value="Telugu">Telugu</option>
+                       <option value="BENGALI">Bengali</option>
+                     </select>
+                  </div>
+                   <div class="row mt-4">
+                       <label for="" class="col col-2">Skills :</label>
+                       <div class="form-check col">
+                         <label class="form-check-label col" for="check">Python</label>
+                         <input class="form-check-input col " type="checkbox" value="" id="check">
+                       </div>
+                        <div class="form-check col ">
+
+                             <label class="form-check-label col " for="check"> CSS</label>
+                            <input class="form-check-input col " type="checkbox" value="" id="check">
+                        </div>
+                         <div class="form-check col ">
+
+                             <label class="form-check-label col " for="check">HTML</label>
+                            <input class="form-check-input col " type="checkbox" value="" id="check">
+                        </div>
+                         <div class="form-check col ">
+
+                             <label class="form-check-label col " for="check">Java</label>
+                            <input class="form-check-input col " type="checkbox" value="" id="check">
+                        </div>
+                    </div>
+                     
+                     <div class="row mt-4">
+                       <label for="button" class="col col-2">Gender :</label>
+                         <div class="form-check col">
+                               <input class="form-check-input col" type="radio" name="radiobtn" id="rbtn" checked>
+                                <label class="form-check-label col" for="rbtn">MALE</label>
+                         </div>
+                         <div class="form-check col">
+                               <input class="form-check-input col" type="radio" name="radiobtn" id="rbtn" checked>
+                                <label class="form-check-label col" for="rbtn">FEMALE</label>
+                         </div>
+                         <div class="form-check col">
+                               <input class="form-check-input col" type="radio" name="radiobtn" id="rbtn" checked>
+                                <label class="form-check-label col" for="rbtn">Prefer not to say</label>
+                         </div>
+                     </div>
+
+                    <div class="row mt-4">
+                         <label for="customRange1" class="form-label col-4">Rate your Experience :</label>
+                    <input type="range" class="form-range col" id="customRange1" step="10">
+                    </div>
+                    <div class="d-flex gap-5">
+                          <label for="" class="mt-4 ">Feedback :</label>
+                         <div class="form-floating">
+                             <textarea class="form-control" placeholder="Write your feedback" id="floatingTextarea2" style="height:80px;width:400px ;"></textarea>
+                                <label for="floatingTextarea2">Comments</label>
+                         </div>
+                    </div>
+                      <button class="btn btn-primary mt-5" type="submit">Submit form</button>
+                    <br><br>
+                     <div class="form-check form-switch ms-5 mt-4 t-btn">
+                        <input class="form-check-input" type="checkbox" id="newsletterSwitch">
+                       <label class="form-check-label " for="newsletterSwitch"> Subscribe to our newsletter </label>
+                      </div>
+                 </fieldset>
+              </form>
+           </div>
+        </div>
+</body>
+</html>
