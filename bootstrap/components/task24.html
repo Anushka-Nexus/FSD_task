@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../bootstrap-5.3.7-dist/css/bootstrap.css">
+    <script src="../bootstrap-5.3.7-dist/js/bootstrap.bundle.min.js"></script>
+    <style>
+       .element{ height: 500px;width: 500px;}
+       #menulist{
+         width: 140px;
+         height: 80px;
+         top: 18%;
+         left: 4.7%;
+         border-radius: 8px;
+       }
+    </style>
+</head>
+<body>
+    <!-- collapse element and dropdown element -->
+    <div class="main d-flex gap-3">
+         
+      <div class="element bg-dark ms-5 my-5 text-light">
+        
+         <button data-bs-toggle="collapse" data-bs-target="#menulist" class="btn btn-warning my-5 ms-4">Hidden Content</button>
+           <div id="menulist" class="border border-light position-absolute fs-5 text-light">
+                <span >this is some hidden content</span>
+           </div>
+            
+      </div>
+      <div class="element bg-dark my-5 text-light">
+            <span class="fs-5">drop-down list</span><br>
+            <div class="dropdown fs-5 ms-5 my-5">
+                    <button class="dropdown-toggle btn btn-light" data-bs-toggle="dropdown" data-bs-target="#list">Services</button>
+                    <ul class="dropdown-menu" id="list">
+                              <a href="" class="nav-item nav-link fs-6 ">Service1</a>
+                              <a href="" class="nav-item nav-link fs-6">Service2</a>
+                               <a href="" class="nav-item nav-link fs-6">Service3</a>
+                    </ul> 
+            </div>
+      </div>
+    </div>
+    
+    
+</body>
+</html>
