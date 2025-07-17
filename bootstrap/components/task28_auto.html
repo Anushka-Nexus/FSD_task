@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../bootstrap-5.3.7-dist/css/bootstrap.css">
+    <script src="../bootstrap-5.3.7-dist/js/bootstrap.bundle.min.js"></script>
+    <style>
+        .container{
+            width: 450px;
+            }
+           .accordion-header{ --bs-accordion-active-bg:rgb(165, 217, 165);}
+           /* uppr ki property accordion ko active kiya to aati hai */
+           .accordion-button{ background-color: rgb(252, 222, 227);} 
+           .accordion-body{ background-color: pink;}
+        /* background-color: var(--bs-accordion-active-bg); iss property ko change kiya inspect k waqt */
+    </style>
+</head>
+<body>
+    <div class="container p-5">
+        <div class="accordion" id="accd">
+            <div class="accordion-item" data-bs-parent="#accd">
+                  <div class="accordion-header">
+                      <button class="accordion-button collapsed" data-bs-target="#acc1" data-bs-toggle="collapse"> What is CSS ?</button>
+                  </div>
+                  <div class="accordion-collapse collapse" data-bs-parent="#accd" id="acc1">
+                      <div class="accordion-body">
+                          <h4>Cascading Style Sheets</h4>
+                           <p>CSS stands for Cascading Style Sheets, used to describe the presentation and design of a web pages
+                              CSS is acronym of Cascading Style Sheets.
+                              It helps to define the presentation of HTML elements as a separate file known as CSS file having .css extension.
+                          </p>
+                      </div>
+                  </div>
+            </div>
+             <div class="accordion-item" data-bs-parent="#accd">
+                  <div class="accordion-header">
+                      <button class="accordion-button collapsed" data-bs-target="#acc2" data-bs-toggle="collapse"> What is HTML ?</button>
+                  </div>
+                  <div class="accordion-collapse collapse" data-bs-parent="#accd" id="acc2">
+                      <div class="accordion-body">
+                          <h4>HyperText Markup Language</h4>
+                           <p>
+                            HTML (HyperText Markup Language) is a form of programming code used to instruct a browser to create the structure
+                             for individual web pages on a website. This markup language is a fundamental component of how billions of people
+                              perceive and consume pages on the internet.
+                          </p>
+                      </div>
+                  </div>
+            </div>
+            <div class="accordion-item" data-bs-parent="#accd">
+                  <div class="accordion-header">
+                      <button class="accordion-button collapsed" data-bs-target="#acc3" data-bs-toggle="collapse"> What is Bootstrap ?</button>
+                  </div>
+                  <div class="accordion-collapse collapse" data-bs-parent="#accd" id="acc3">
+                      <div class="accordion-body">
+                          <h4>Bootstrap is the most popular CSS Framework</h4>
+                           <p>
+                            In other words, Bootstrap helps web developers build websites faster as they don’t need to worry about basic 
+                            commands and functions. It consists of HTML, CSS, and JS-based scripts for various web design-related functions 
+                            and components. This article will cover the benefits of using Bootstrap and explain the different file types it uses.
+                          </p>
+                      </div>
+                  </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

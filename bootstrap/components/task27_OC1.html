@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">  
+    <link rel="stylesheet" href="../bootstrap-5.3.7-dist/css/bootstrap.css">
+    <script src="../bootstrap-5.3.7-dist/js/bootstrap.bundle.min.js"></script>
+    <style>
+       .offcanvas-width{
+            width: 300px;
+            height: 100vh;
+            background-color: #e84a96 !important;
+            position: absolute;
+            top: 0;
+           
+       }
+       .mob{
+         height: 100vh !important;
+       }
+      
+       .menu-button{
+          top: 10px;
+          left: 1rem;
+       }
+       @media (min-width :990px){
+         .mob{
+            position:fixed;
+            visibility: visible !important;
+            transform: none !important;
+            top: 0;
+         }
+       }     
+       .de-text{ font-size: 1rem;}
+        @media (min-width :990px){
+            .de-text{
+                font-size: 24px;
+            }
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="container-fluid bg-dark">
+         <div class="container">
+              <nav class="navbar navbar-expand-lg ">
+                     <h1 class="navbar-brand"><i class="fa-solid fa-heart" style="color: #e84a96; margin-left: 400px;">Anushka</i></h1> 
+              </nav>
+         </div>
+        
+     </div>
+       <a class="btn btn-dark d-lg-none position-absolute menu-button" data-bs-target="#target" data-bs-toggle="offcanvas"><i class="fa-solid fa-bars"></i></a>
+      <div class="offcanvas offcanvas-lg offcanvas-start offcanvas-width mob" id="target">
+              <div class="offcanvas-header text-light" data-bs-backdrop="static">
+                     <h5 class="offcanvas-title">Menu</h5>
+                     <button type="button" class="btn btn-close ms-auto" data-bs-dismiss="offcanvas"></button>
+              </div>
+              <div class="offcanvas-body text-light d-flex flex-column">
+                  <h5 class="mt-lg-3 ms-lg-4 de-text d-block">IN FOCUS</h5>
+                 <ul class="list-unstyled ps-3">
+                       <li class="mb-2">
+                          <strong class="d-block mb-2 ms-lg-2">Categories</strong>
+                          <ul class="list-unstyled ps-3">
+                             <li><a href="#" class="d-block text-decoration-none text-light mb-1">Men</a></li>
+                             <li><a href="#" class="d-block text-decoration-none text-light mb-1">Women</a></li>
+                             <li><a href="#" class="d-block text-decoration-none text-light mb-1">Kids</a></li>
+                             <li><a href="#" class="d-block text-decoration-none text-light mb-1">Accessories</a></li>
+                             <li><a href="#" class="d-block text-decoration-none text-light mb-1">Footwear</a></li>
+                         </ul>
+                      </li><br>
+                      <li class="mb-2">
+                         <strong class="d-block mb-2 ms-2">Shop By</strong>
+                          <ul class="list-unstyled ps-3">
+                            <li><a href="#" class="d-block text-decoration-none text-light mb-1">New Arrivals</a></li>
+                            <li><a href="#" class="d-block text-decoration-none text-light mb-1">Best Sellers</a></li>
+                            <li><a href="#" class="d-block text-decoration-none text-light mb-1">Trending</a></li>
+                            <li><a href="#" class="d-block text-decoration-none text-light mb-1">Sale</a></li>
+                         </ul>
+                     </li>
+                </ul>
+              </div>
+    </div>
+</body>
+</html>
