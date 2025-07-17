@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../bootstrap-5.3.7-dist/css/bootstrap.css">
+    <script src="../bootstrap-5.3.7-dist/js/bootstrap.bundle.min.js"></script>
+    <style>
+          .accordion-button{
+            --bs-accordion-btn-focus-box-shadow: 0 0 0 0.25rem rgba(165, 19, 175, 0.25);
+            --bs-accordion-active-bg:rgb(245, 229, 245);
+          }
+          /* iss property ko inspect k waqt dekha tha ye jb acc btn toggle krte hai to ek shadow effect deta hai */
+          .accordion-button{ background-color: rgb(215, 218, 162);} 
+           .accordion-body{ background-color: rgb(232, 169, 237);}
+    </style>
+</head>
+<body>
+     <div class="container mt-5" style="width: 500px;">
+          <div class="accordion" id="parentid">
+              <div class="accordion-item" data-bs-parent="#parentid">
+                   <div class="accordion-header">
+                       <button class="accordion-button collapsed" data-bs-target="#childid" data-bs-toggle="collapse">Is bootstrap is a good project?</button>
+                   </div>
+                   <div class="accordion-collapse collapse " data-bs-parent="#parentid" id="childid">
+                      <div class="accordion-body">
+                          <p>As of May 2023, Bootstrap is the 17th most starred project (4th most starred library) on GitHub, with over
+                             164,000 stars. According to W3Techs, Bootstrap is used by 19.2% of all websites. Bootstrap is an HTML, CSS
+                              and JS library that focuses on simplifying the development of informative web pages (as opposed to web applications).
+                          </p>
+                      </div>
+                   </div>
+              </div>
+              <div class="accordion-item" data-bs-parent="#parent">
+                   <div class="accordion-header">
+                       <button class="accordion-button collapsed" data-bs-target="#childid1" data-bs-toggle="collapse">Why do developers use bootstrap?</button>
+                   </div>
+                   <div class="accordion-collapse collapse" data-bs-parent="#parent" id="childid1">
+                      <div class="accordion-body">
+                          <p> In other words, Bootstrap helps web developers build websites faster as they don’t need to worry about basic commands
+                             and functions. It consists of HTML, CSS, and JS-based scripts for various web design-related functions and components.
+                          </p>
+                      </div>
+                   </div>
+              </div>
+               <div class="accordion-item" data-bs-parent="#parent1">
+                   <div class="accordion-header">
+                       <button class="accordion-button collapsed" data-bs-target="#childid2" data-bs-toggle="collapse">Why do we need to learn bootstrap?</button>
+                   </div>
+                   <div class="accordion-collapse collapse" data-bs-parent="#parent1" id="childid2">
+                      <div class="accordion-body">
+                          <p> Bootstrap is the Fastest and Easiest way to create web pages. Bootstrap is widely used to create Platform-independent
+                             web pages. Bootstrap is popular for creating Responsive web pages. Reasons to learn Bootstrap? Using pre-styled components makes development 
+                             faster. Bootstrap is based on the mobile-first concept that works well on all screen sizes.
+                          </p>
+                      </div>
+                   </div>
+              </div>
+          </div>
+     </div>
+</body>
+</html>
