@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,11 +8,47 @@
     <link rel="stylesheet" href="../bootstrap-5.3.7-dist/css/bootstrap.css">
     <script src="../bootstrap-5.3.7-dist/js/bootstrap.bundle.min.js"></script>
 </head>
+
 <body>
-      <button class="btn btn-warning ms-5 mt-5" data-bs-target="#ocelement" data-bs-toggle="offcanvas">Open Offcanvas Element</button>
-       <div class="offcanvas offcanvas-top" id="ocelement">
-           <div class="offcanvas-header bg-dark text-light" data-bs-backdrop="static">Message(Header)</div>
-           <div class="offcanvas-body bg-success text-light" data-bs-backdrop="static">You'va successfully open the offcanvas-body(This is the body of offcanvas_)</div>
-       </div>
+    <div class="container-fluid bg-dark position-sticky top-0">
+        <div class="container">
+            <nav class="navbar navbar-expand-lg navbar-dark bg-dark align-item-center">
+                <h1 class="navbar-brand name">Anushka</h1>
+
+                <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#menu">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="offcanvas offcanvas-end bg-danger text-light" id="menu">
+                    <div class="offcanvas-header text-light" data-bs-backdrop="static">
+                        <h5 class="offcanvas-title">Menu</h5>
+                        <button type="button" class="btn btn-close ms-auto btn-light"
+                            data-bs-dismiss="offcanvas"></button>
+                    </div>
+                    <ul class="navbar-nav ms-5">
+                        <li class="nav-item">
+                            <a class="nav-link" href="">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="">In Focus</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="">Clothing</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="">Shoes</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="">Beauty</a>
+                        </li>
+                        <li class="nav-item d-flex gap-3">
+                            <input class="form-control" placeholder="search here.." type="search">
+                            <button class="btn s-btn btn-light fw-semibold">Search</button>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </div>
 </body>
+
 </html>
