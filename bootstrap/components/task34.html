@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/bootstrap-5.3.7-dist/css/bootstrap.css">
+    <script src="/bootstrap-5.3.7-dist/js/bootstrap.bundle.min.js"></script>
+    <style>
+        .container-fluid {
+            height: 100vh;
+            width: 100vw;
+            background-color: rgb(239, 37, 114);
+        }
+
+        .container {
+            height: 600px;
+            width: 800px;
+            background-color: rgb(236, 240, 8);
+            position: absolute;
+            top: 10%;
+            left: 20%;
+
+        }
+
+        .content {
+            background-color: rgb(236, 240, 8);
+            width: 200px;
+            height: 600px;
+            position: absolute;
+        }
+
+        .logo {
+            color: rgb(255, 255, 255);
+            margin-left: 65px;
+        }
+
+        .form_content {
+            height: 600px;
+            width: 600px;
+            background-color: aliceblue;
+            position: relative;
+            left: 200px;
+        }
+
+        .form-control:focus {
+            box-shadow: 0 0 0 0.25rem rgba(221, 127, 190, 0.25);
+            border-color: rgba(221, 127, 190, 0.50);
+        }
+
+        .random_message {
+            position: absolute;
+            top: 40%;
+            left: 40%;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container-fluid z-n1">
+        <div class="random_message">
+            <div class="alert alert-warning z-1">you have close the form!</div>
+            <button class="btn btn-warning ms-5" data-bs-target="#menulist" data-bs-toggle="collapse">Open form</button>
+        </div>
+        <div class="container z-2 collapse show" id="menulist">
+            <div class="content">
+                <svg xmlns="http://www.w3.org/2000/svg" width="50px" height="50px" fill="currentColor"
+                    class="bi bi-envelope logo mt-5" viewBox="0 0 16 16">
+                    <path
+                        d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1zm13 2.383-4.708 2.825L15 11.105zm-.034 6.876-5.64-3.471L8 9.583l-1.326-.795-5.64 3.47A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.741M1 11.105l4.708-2.897L1 5.383z" />
+                </svg>
+                <div class="contact ms-3" style="height: 300px; width: 180px; margin-top: 400px;">
+                    <h5 class="fw-bold">Contact Us at</h5>
+                    <h5>xxxx@gmail.com</h5>
+                </div>
+            </div>
+            <div class="form_content ">
+
+                <div class="d-flex justify-content-between">
+                    <h3 class="fw-bold text pt-4 ps-4">Hire Us</h3>
+                    <button class="btn-close pt-5 pe-5" data-bs-toggle="collapse" data-bs-target="#menulist"></button>
+                </div>
+
+                <form action="" class="pt-4 ps-3">
+                    <label for="message" class="fs-5 d-block">Message</label>
+                    <textarea class="form-control mt-2" id="message" rows="5" style="width: 550px;" required></textarea>
+                    <div class="row pt-5">
+                        <label for="Name" class="fs-5 col">Name</label>
+                        <label for="mail" class="fs-5 col">Email</label>
+                    </div>
+                    <div class="row mt-2 gap-4" style="width: 580px;">
+                        <input type="text" placeholder="Your Name" class="form-control col" required>
+                        <input type="email" placeholder="Your Email" class="form-control col" required>
+
+                    </div>
+                    <button class="btn btn-success mt-5" style="margin-left: 200px;" data-bs-target="#submitform"
+                        data-bs-toggle="modal"> 
+                        Submit
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal" id="submitform">
+        <div class="modal-dialog">
+            <div class="modal-content bg-dark text-light">
+                <div class="modal-header">Hello User!</div>
+                <div class="modal-body">Are you sure?You want to submit the form!</div>
+                <div class="modal-footer">
+                    <button class="btn btn-success mt-5" style="margin-left: 180px;" data-bs-toggle="modal"
+                        data-bs-target="#submit_confirm">Yes</button>
+                    <button class="btn btn-danger mt-5" data-bs-toggle="modal"
+                        data-bs-target="#submit_cancel">No</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal" id="submit_cancel">
+        <div class="modal-dialog">
+            <div class="modal-content bg-dark text-light">
+                <div class="modal-header">Hello User!</div>
+                <div class="modal-body">Do you want to cancel the form?</div>
+                <div class="modal-footer">
+                    <button class="btn btn-success mt-5" style="margin-left: 180px;" data-bs-toggle="modal">Yes</button>
+                    <button class="btn btn-danger mt-5" data-bs-toggle="modal">No</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal" id="submit_confirm">
+        <div class="modal-dialog">
+            <div class="modal-content bg-dark text-light">
+                <div class="modal-header">Hello User!</div>
+                <div class="modal-body">Do you want to submit the form and save the changes?</div>
+                <div class="modal-footer">
+                    <button class="btn btn-success mt-5" style="margin-left: 180px;" data-bs-toggle="modal"
+                        data-bs-target="#submit_success">Yes</button>
+                    <button class="btn btn-danger mt-5" data-bs-toggle="modal">No</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal" id="submit_success">
+        <div class="modal-dialog">
+            <div class="modal-content bg-dark text-light">
+                <div class="modal-body">
+                    <div class="alert alert-success">Congralutions! You have submitted the form successfully!</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

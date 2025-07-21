@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/bootstrap-5.3.7-dist/css/bootstrap.css">
+    <script src="/bootstrap-5.3.7-dist/js/bootstrap.bundle.min.js"></script>
+    <style>
+        .custom {
+            color: rgb(6, 6, 6);
+            text-decoration: none !important;
+        }
+
+        .custom:focus {
+            color: rgba(252, 251, 251, 1);
+        }
+
+        .custom:hover {
+            color: coral;
+        }
+    </style>
+</head>
+
+<body data-bs-spy="scroll" data-bs-target="#parent">
+    <div class="container-fluid bg-primary">
+        <div class="container">
+            <div class="navbar navbar-expand-lg " id="parent">
+                <div class="navbar-brand">ANUSHKA</div>
+                <button class="navbar-toggler" data-bs-target="#menu_item" data-bs-toggle="collapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse justify-content-end" id="menu_item">
+                    <!-- alignment property use ki hai jo menu ko right-end pr dikhayga -->
+                    <div class="navbar-nav ">
+                        <ul class="nav nav-tabs">
+                            <li class="nav-items">
+                                <a href="#home" class="nav-link custom">HOME</a>
+                            </li>
+                            <li class="nav-items">
+                                <a href="#product" class="nav-link custom">PRODUCT</a>
+                            </li>
+                            <li class="nav-items">
+                                <a href="#service" class="nav-link custom">SERVICE</a>
+                            </li>
+                            <li class="nav-items">
+                                <a href="#contact" class="nav-link custom">CONTACT</a>
+                            </li>
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="home" class="bg-dark text-light" style="height:100vh;">home content</div>
+    <div id="product" class="bg-warning text-light" style="height:100vh;">product content</div>
+    <div id="service" class="bg-dark text-light" style="height: 100vh;">service details</div>
+    <div id="contact" class="bg-warning text-light" style="height:100vh;">contact details</div>
+</body>
+
+</html>
