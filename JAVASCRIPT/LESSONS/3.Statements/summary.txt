@@ -1,0 +1,66 @@
+Statements :-In JavaScript, a statement is an instruction that performs an action. Think of statements as the building blocks
+             of your code that tell the browser what to do.
+
+There are three types of statement:-
+(1) Input/Output statement :- These are the statement which are used to take input from the user or used to display output from the user.
+    
+    Input statement:-
+    window.prompt():-  
+          Displays a dialog box asking the user to enter input.  
+          Returns the input as a string.  
+          If the user clicks Cancel, it returns null  
+          ex:-let name = window.prompt("What is your name?");  (input statement)
+             console.log(name); 
+
+    Output statement :-
+     console.log():- display the output in the console section
+     window.alert() :- display the output message as a alert box to the user
+     document.write() :- display the output in the document
+
+(2)Conditional statement :- As the name suggest Conditional statement are those statement who depends on the condition for its execution.
+                            There are various types of Conditional statement some are :-
+
+            (i)If statement:- here only one condition is provided by the programmer if the condition of if-block gets satisfied then the 
+                               if-block will executed otherwise the control will exited from the if block .
+                    
+                    Syntax :- If(condition){
+
+                        //true block
+                    }
+            
+            (ii)If-else statement:- here a condition is provided by the programmer if the condition of if-block gets satisfied then the 
+                               if-block will executed otherwise the control will move to else block and there statements will executed .
+                    
+                    Syntax :- If(condition){
+
+                        //true block
+                    }
+                    else{
+                        //false block
+                    }
+             (iii)If-else-if statement:- here  a condition is provided by the programmer if the condition of if-block gets satisfied then the 
+                               if-block will executed otherwise the control will move to else-if block  and if the else-if condition 
+                               is satisfied then else-if block will executed and otherwise else-block statements will executed .
+                    
+                    Syntax :- If(condition){
+
+                        //if block
+                    }
+                    else if(condition){
+                        //else-if block
+                    }
+                    else{
+                        //else block
+                    }
+                
+                 (iv)Nested if statement:- here  a condition is provided by the programmer if the condition of if-block gets satisfied then it
+                                           will move inside the if-block now here more than one conditions are given if all are satisfied then 
+                                           the statement will finally executed.
+                    Syntax :- If(condition){
+                                  if(condition1){
+                                     if(condition2)
+                                  }
+                             }
+                 
+                
+

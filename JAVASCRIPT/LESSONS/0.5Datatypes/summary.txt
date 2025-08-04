@@ -1,0 +1,22 @@
+Datatypes :-In a simple language datatypes tells what type of data is stored in the variable.
+
+Majorly there are two types datatype :-
+(1)Primitive and (2)Non-Primitive
+
+(1)Primitive datatype:- These are the pre-defined or we can say in-built datatype which is already defined by the language itself.
+                        It includes :-
+                        (1)Number :- int,float,double,long,short
+                                     Integer :-An integer is a whole number — a number without any decimal (dot) part.
+                                     Float :- float is a decimal number.
+
+                        (2)String :- It is a collection of character inclosed within a ("    ") double quotetion.
+
+                        (3)Boolean :-Boolean is a value which stores only two value either true or false.
+
+
+(2)Non-Primitive Datatype:- These are the user-defined datatype.
+                             It includes :-
+                             (1)object :-An object is like a box that holds things by name.
+                             (2)array :- an array is a collection of same datatype.
+                             (3)function :- in a simple words function is  a block of code which can be referred anywhere 
+                                             ,multiple number of times by its name.
