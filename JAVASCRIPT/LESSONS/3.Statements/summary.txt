@@ -62,5 +62,30 @@ There are three types of statement:-
                                   }
                              }
                  
+                 (v) Switch-case statements :-In the switch case statements any number of conditions can be given which will be compared using switch condition if 
+                          the condition satisfied then that particular statements of case block will be executed.
+                          It is used to written the menu-driven program.
+
+                  Syntax :-
+                      switch(compared-condition){
+                          case condition1 : 
+                                   statements
+                                   break ;
+                          .
+                          .
+                           case condition n : 
+                                   statements
+                                   break ;
+              
+                           default : statements
+                      }
+    
+                    (vi) Ternary statements:- In a simple words Ternary statements can be said as a short version of if-else statements
+                    
+                            Syntax :- (condition)? true statements: false statements
+                    
+                    
+                    // while comparing character/String the dec value will be compared 
+ 
                 
 
