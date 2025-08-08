@@ -1,0 +1,48 @@
+LOOP
+  
+  Q.What is loop?
+  :-loops are used to execute a block of code repeatedly
+
+  There are three general types of loops :-
+    while loop
+    do-while loop
+    for loop(for-next,for-each loops)
+
+ (1)While loop :- It is atype of loop which will repeatedly executed until the condition met.
+     
+     Syntax:- while(condition){
+        //statements
+        //updation condition it should be relevant 
+     }
+
+
+     ex:- wap to print a factorial of a number.
+
+     let num=4
+     let ans=1
+     while(num>0){
+        fact=fact*num
+        num--
+     }
+     console.log("Factorial is :-" +fact)
+
+     ex:- wap using while loop to print even numbers from 0 to 100
+     let num1=0
+     while(num1 <=100){
+        if(num1%2==0){
+            console.log(num1)
+        }
+        num1++
+     }
+
+     ex :- wap to print odd numbers 1 to 70
+     let number=1
+      while(number <=100){
+        if(number%2!=0){
+            console.log(number)
+        }
+        number++
+     }
+
+     ex :- add of number,armstrong,palindrome, prime in range 
+  (2)
