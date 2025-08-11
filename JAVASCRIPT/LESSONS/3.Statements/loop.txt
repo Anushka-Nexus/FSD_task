@@ -29,4 +29,22 @@ LOOP
 
     
    
-  (2)
+  (2)Do-while loop :-Do-while loop is a type of control statement which will executed atleast once without checking if the condition
+                     even met or not (for the first time).
+                     And then from the 2nd iteration it will check the condition if the condition is satisfy then it will execute the block.
+
+      Syntax :- Do{
+              //statement
+              //updation
+      }while(condition);
+
+      
+
+   (3)For-loop :- It is a type of iterative loop which will be repeatedly executed until the condition is satisfied.
+
+   Syntax :-
+            for(initialize ; condition ; updation){
+               //statement
+            }
+
+   
