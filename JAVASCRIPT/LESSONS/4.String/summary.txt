@@ -1,0 +1,64 @@
+String :- String is  a sequence of character.
+
+In javascript there are various methods and properties which can be used to manipulate the strings.
+
+String manipulation includes 
+:- creating a string
+updating
+changing
+accessing,etc.
+
+Some properties are :-
+ (1)Length :- With the help of js one can know the Length of the string .
+              Function :-
+                variable-name.length()
+ 
+Some methods of manipulation are :-
+   (1)Case :- With the help of js one can change the case of the string .
+             It includes :-
+             (i)variable.toUpperCase():- converts the string into to Upper Case
+
+             (i)variable.toLowerCase():- converts the string into to Lower Case
+
+   (2)Index :-With the index one can access the string in js.
+        (i)Indexof :- It is a method used to find the position of the first occurrence of a specified value in a string
+        (ii)LastIndexof:-It is similar to indexOf(), but it searches from the end of the string or array and returns the last occurrence    
+                         of the specified value.
+  
+   (3)slice:- It is used to extract certain portion of the string.
+          syntax:-
+             variable.slice(start_value,end_value)
+   (4)substring:- It can be used to divide the string in desired portion.
+            syntax:-
+                   variable.substring(start,end)
+  
+   (5)Replace :- With the help of js one can change the group of character from the string using replace Function.
+            It includes:-
+             (i)variable.replace("jisko change krna hai" "jisse change hoga") :- It replace first occurence of the string(desired group of char)
+
+             (ii)variable.replaceAll("jisko change krna hai" "jisse change hoga") :- It replace first occurence of the string(desired group of char)
+   
+   //Difference between slice and substring
+     Feature	                               slice()	                              substring()
+      Negative numbers	                 Works (counts from end)	               Does not work (treats as 0)
+      If start > end	                      Returns empty string	               Swaps the two values
+      Example with negatives	            "Hello".slice(-3) → "llo"           	 "Hello".substring(-3) → "Hello"
+
+  //Difference between index and position
+    Index:
+       It’s like a label or number assigned to something to tell where it is, usually starting from 0.
+       
+       Used mostly in computers and programming.
+       
+       Example: If you have a row of lockers numbered 0, 1, 2, 3 — the index tells you which locker.
+
+    Position:
+     It means the place or spot in an order, usually starting from 1.
+     
+     How people usually count naturally.
+     
+     Example: Saying “the 1st locker, 2nd locker, 3rd locker” — that’s position.
+
+            
+             
+
