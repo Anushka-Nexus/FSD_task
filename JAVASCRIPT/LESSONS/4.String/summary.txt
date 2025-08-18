@@ -59,6 +59,22 @@ Some methods of manipulation are :-
      
      Example: Saying “the 1st locker, 2nd locker, 3rd locker” — that’s position.
 
-            
-             
+      program :-wap to count each character occurence    
+
+
+()Template litrals :-Template literals are a way to work with strings in JavaScript, using backticks ( ` ) instead of quotes.
+       example :- let name=`anu`
+
+   When one wants to concatenate the string of the Template literals they can simply use ${}
+       example:- console.log(`The name is ${name}`)
+
+   It makes the concatenation less complicated.
+
+()Regex :- 
+   match():-
+   test():-
+   pattern is enclosed within the /anything inside this/
+ex :-
+let patern = (?=.*[0-9]?=.*[a-z]?=.*[A-z] .{8,10}$)
+  
 
