@@ -33,61 +33,7 @@ else {
     window.alert("The largest number is :" + num4)
 }
 
-//Wap to find out largest number from 5 given number :
-//     let number1 = 30
-//     let number2 = 40
-//     let number3 = 65
-//     let number4 = 89
-//     let number5 = 85
 
-// if (number1 > number2) {
-//     if (number1 > number3) {
-//         if (number1 > number4) {
-//             if(number1>number5){
-//                  document.write("The largest number is :-" + number1)
-//             }  
-//         }
-//         else {
-//             if (number5 > number2) {
-//                 if (number5 > number3) {
-//                     if(number5>number4){
-//                         document.write("The largest no. is : " + number5)
-//                     }
-//                 }
-//             }
-//         }
-//     }
-// } else if (number2 > number3) {
-//     if (number2 > number4) {
-//       if(number2 > number5){
-//           document.write("The largest number is :-" + number2)
-//       }
-//     }
-//     else {
-//         if (number5 > number3) {
-//                     if(number5>number4){
-//                         document.write("The largest no. is : " + number5)
-//                     }
-//                 }
-//     }
-// } else if (number3 > number4) {
-//     if(number3 > number5){
-//          document.write("The largest number is :-" + number3)
-//     }
-//     else{
-//         if(number5 > number4){
-//         document.write("The largest no. is : " + number5)
-//     }
-//     }
-
-// }
-
-// else if(number4 > number5) {
-//     document.write("The largest number is :" + number4)
-// }
-// else{
-//      document.write("The largest no. is : " + number5)
-// }
 
 
 //wap to find out largest from 5 numbers 

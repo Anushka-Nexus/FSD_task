@@ -40,11 +40,7 @@ for (let k = 0; k < string3.length; k++) {
 }
 console.log("The unique character are :-" + unique_char)
 
-// // space 
-// let pattern=/@/
-//  if(email.match(pattern) &&  )
-
-
+//wap to count the occurence of each char in a string
 let string_c = `accountability`;
 let checked = ``
 

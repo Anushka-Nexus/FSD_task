@@ -1,0 +1,36 @@
+FUNCTION:-
+a function is a block of reusable code that performs a specific task or set of tasks. Functions help organize code into logical sections, making it easier to read, maintain, and reuse.
+
+Creating a function :-
+ Syntax:-
+      function function_name(args[optional]){
+          function body 
+          return statement(optional)
+      }
+
+To call a function :-
+
+ function_name(agrs[optional])
+
+ES6 (fat arrow function,arrow function , callback and module )
+ :-arrow functions were introduced as a new way to write functions in JavaScript.
+ :- It is a top order code
+
+Syntax of creating fat arrow function:-
+
+  let function_name = (args[optional]) => {
+    function body
+    return statement(optional)
+}
+
+Types of function :-
+ (1)No argument and no return function :-It is a type of function which do not accept any argument and also do not return any value to the     calling function.
+
+ (2) argument and no return function :-It is a type of function which can accept any number of argument and  do not return any value to the     calling function.
+
+ (3)No argument and return function :-It is a type of function which do not accept any  argument and  but return a value to the calling function.
+
+ (4) argument and return function :-It is a type of function which can accept any number of argument also return a value to the calling function.
+
+
+  

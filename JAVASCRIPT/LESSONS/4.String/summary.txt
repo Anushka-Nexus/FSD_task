@@ -70,10 +70,19 @@ Some methods of manipulation are :-
 
    It makes the concatenation less complicated.
 
-()Regex :- 
-   match():-
-   test():-
+()Regex :-regular expressions (regex) can be defined using literals or using the RegExp constructor.
+
+          Creating a regex :-
+            let regex_variable=/regex expression/ 
+  
+   PATTERN:-
    pattern is enclosed within the /anything inside this/
+   pattern is the regular expression pattern you're trying to match.
+   flags are optional and modify how the regex behaves.
+
+    match():-the .match() method is used on strings to find matches using a regular expression.
+    test():-the .test() method is used with regular expressions to check whether a pattern exists in a string.
+             it gives either true or false as a output.
 ex :-
 let patern = (?=.*[0-9]?=.*[a-z]?=.*[A-z] .{8,10}$)
   
