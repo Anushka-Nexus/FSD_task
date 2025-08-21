@@ -1,0 +1,194 @@
+ARRAY :- 
+      Array is a collection of elements.
+      Ex:- let number_array=[1,`anu`,787980]
+
+Transversing loops for array :-
+
+Forof loop :-
+  
+   syntax:-
+      for(let element of array_name){
+        //code body
+      }
+
+ForEach loop:-
+Returns undefined data
+
+     syntax:-
+        array.forEach((element,index)=>{
+            //code
+        })
+
+Map :-
+ Returns a new array from the callback function
+
+    syntax:-
+      array_name.map((element,index)=>{
+        //code
+      }) 
+
+Updating a array :-
+
+For adding a value in the array there are two methods:-
+   (1)push :- Will add the value from trailing side.
+       format:- array_name.push(value)
+   
+   (2)unshift :- Will add the value from leading side.
+       format:- array_name.unshift(value)
+   
+   For removing a value in the array there are two methods:-
+   (3)pop :- Will remove the value from trailing side.
+       format:- array_name.push(value)
+   
+   (4)shift :- Will remove the value from leading side.
+       format:- array_name.shift(value)
+
+Now there is a method in a js which can delete the any desired element from the array and also we can replace the value.
+which is :-
+
+ (5)splice (method):-The splice() method in JavaScript is used to add, remove, or replace elements in an array. Unlike slice(), which is    non-destructive, splice() modifies the original array.
+    format:-
+      array_name.splice(search index,delete count,replacement value(optional))
+
+Searching a element in a array 
+
+()includes():- It will return boolean value.
+               It will only checks whether the element is present in the array or not.
+                syntax :-
+                 array_name.includes(search element)
+
+(1)filter :- It search the particular data and also can return the value.
+             The .filter() method in JavaScript is used to create a new array containing only the elements that pass a test (defined by a callback function). It does not change the original array.
+
+           syntax:-
+            array_name.filter((element,index)=>{
+              //code
+           })
+
+(2)indexof():- In js,the indexOf() method is used to find the first index at which a given element can be found in an array. If the element is     not  present, it returns -1.
+  syntax:-
+     array.indexOf(searchElement, fromIndex(optional))
+    **fromIndex (optional) – The index to start the search from (default is 0).
+
+  ex :- let fruit=[`mango`,`apple`,`banana`]
+
+  console.log(fruits.indexOf("banana")); //output is 2
+  console.log(fruits.indexOf("pineapple")); //output is -1
+  console.log(fruits.indexOf("apple",3)); // Output: 4 (starts searching from index 3)
+
+(3)lastIndexOf() :- The lastIndexOf() method in Js is used to find the last occurrence of a specified element in an array. If the element is not found, it returns -1.
+   Syntax :-
+       array.lastIndexOf(searchElement, fromIndex)
+     **fromIndex (optional) – The index to start searching backward from (default is the array's last index).
+
+    ex:- let colors = ["red", "blue", "green", "blue", "yellow"];
+
+     console.log(colors.lastIndexOf("blue"));      // Output: 3
+     console.log(colors.lastIndexOf("blue", 2));   // Output: 1 (searches backward from index 2)
+
+(4)find() method :-The .find() method returns the first element in an array that satisfies a given condition (callback function).
+                   If no element matches, it returns **undefined**.
+
+                  ** Important **
+                   .find() returns only the first match
+                   
+                   If no match is found, it returns undefined
+                   
+                   It does not modify the original array
+
+                   Syntax:-
+                     array_name.find((argument)=>{
+                      //condition code body
+                     })
+                   Example:-
+                     let numbers = [1, 3, 5, 4,7,10]
+                     let result = numbers.find(num => num % 2 === 0);
+                     console.log(result); // Output: 8 (first even number)
+Sorting :-
+
+Sorting of number :-
+ For sorting a array in js we use sort() method
+  In asending order
+  format :- array_name.sort()
+  In desending order
+  format :- array_name.sort(return b-a)
+
+Sorting of string :-
+   In order
+   format :-
+     names.sort((a, b) => {
+    if (a > b) {
+        return 1
+    } else {
+        return -1
+    }
+  })
+
+Accessing a array and its methods :-
+(1)slice() method :- In a js, slice method is used to extract a certain portion of an array which one can store into the new array.
+                     It helps to make a new array without modifying a present array.
+
+                Syntax:-
+                  array.slice(start, end)
+                  start(optional) :- starting index of array from one we want to extract the array (IT WILL BE INCLUDED)
+                  end (optional): Index to stop slicing (IT WILL BE NOT INCLUDED).
+                  We can also use negative indexes to count from the end.
+
+                Ex :-
+                 let array1=[100,200,300,400]
+ 
+                 console.log(array1.slice(1,3))  //output is 100,200
+                 console.log(array1.slice(-3))  //output is 200,300,400
+
+
+**General thing
+Category	                                   Example Methods
+Searching	                         indexOf(), lastIndexOf(), find(), includes()
+Updating	                         push(), pop(), shift(), unshift(), splice()
+Accessing / Copying               	slice(), concat(), map(), filter()
+Transforming	                        map(), filter(), reduce()
+
+**Difference between find() and filter()
+
+Feature	                         .find()	                                           .filter()
+Purpose	                Finds the first matching element	                     Returns all matching elements
+Return type	             A single value (or undefined)	                             A new array
+Stops after...         	Finding the first match                               	Checking all elements
+Return if no match	           undefined	                                          Empty array []
+Modifies original?	             ❌ No	                                                ❌ No
+
+**Difference between push() and unshift
+
+Feature	                           push()                        	unshift()
+Adds to	                     End of the array	                   Start (beginning) of the array
+Returns	                     New length of the array            	New length of the array
+Modifies?                  	Yes (modifies original array)	        Yes (modifies original array)
+
+**Important
+   .filter() = Pick elements you want to keep
+
+   .map() = Change each element in some way
+
+**What is OOP in JavaScript?
+
+   OOP in JavaScript means organizing your code using objects that contain data (properties) and functions (methods). It helps you model real-world things and reuse code easily.
+
+   **Key Concepts in JS OOP:
+
+       Objects
+       Collections of key-value pairs (properties and methods).
+       
+       Classes (ES6 and later)
+       Templates to create objects with similar structure and behavior.
+       
+       Constructor Function (before ES6)
+       Functions used to create objects.
+       
+       Inheritance
+       Objects or classes can inherit properties and methods from others.
+
+Sorting Algorithms :-
+ Linear sort :-Linear sort is a fast sorting method that arranges elements in order using a direct approach, usually without comparing every element with every other one.
+ Examples: Counting Sort
+
+  
