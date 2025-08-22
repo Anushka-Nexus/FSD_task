@@ -191,4 +191,121 @@ Sorting Algorithms :-
  Linear sort :-Linear sort is a fast sorting method that arranges elements in order using a direct approach, usually without comparing every element with every other one.
  Examples: Counting Sort
 
+Searching Algorithms :-
+Linear search :-
+          Linear Search is the most basic searching algorithm.
+          
+          It goes through each element one by one in the array.
+          
+          If it finds the target value, it returns the index.
+          
+          If not found, it returns -1.
+algo :-
+ 
+ function linearSearch(arr, searchValue) {
+
+    let steps = 0
+
+    for (let index = 0; index < arr.length; index++) {
+        steps++
+        if (arr[index] === searchValue) {
+            return `the element ${searchValue} found at position ${index + 1} in ${steps} steps !`
+        }
+    }
+    return `the element ${searchValue} not found at any position in ${steps} steps !`
+}
+
+
+**IMPORTANT**
+// best case of linear search O(1)
+// worst case of linear search O(n)
+
+Binary Search :-
+Algo:- //only applicable on sorted array
+function binarySearch(arr, searchValue) {
+    let ub = arr.length - 1
+    let lb = 0
+    let steps = 0
+    while (lb <= ub) {
+        steps++
+        let midPoint = parseInt((ub + lb) / 2)
+        if (arr[midPoint] === searchValue) {
+            return `element ${searchValue} found at position ${midPoint + 1} in ${steps} steps`
+        }
+        if (arr[midPoint] < searchValue) {
+            lb = midPoint + 1
+        } else {
+            ub = midPoint - 1
+        }
+    }
+    return `the element ${searchValue} not found at any position in ${steps} steps !`
+}
+
+**IMPORTANT**
+// best case of  binary search O(1)
+// worst case of binary search O(n^2)
+
+
+
+Sorting Algorithms:-
+
+Bubble Sort :-
+function bubblesort(arr){
+   let swap=false
+    for(let i=0;i<arr.length;i++){
+       for(let j=0;j<arr.length;j++){
+          if(arr[j]>arr[j+1]){
+            //swap 
+            let temp=arr[j]
+            arr[j]= arr[j+1]
+            arr[j+1]=temp
+            swap=true
+          }
+          if(!swap){
+            return arr
+          }
+      } 
+      return arr
+    }
+}
+
+Working and logic :-
+Repeatedly compares two adjacent elements in an array.
+
+Swaps them if they are in the wrong order.
+
+After each full pass, the largest element "bubbles up" to the end of the array.
+
+You repeat this process until the whole array is sorted.
+
+
+SelectionSort :-
+Algo and working:-
+function selectionSort(arr) {
+    for (let i = 0; i < arr.length; i++) {
+        let minIndex = i
+        for (let j = i; j < arr.length; j++) {
+            if (arr[j] < arr[minIndex]) {
+                minIndex = j
+            }
+        }
+        let temp = arr[i]
+        arr[i] = arr[minIndex]
+        arr[minIndex] = temp
+    }
+    return arr
+}
+
+WORKING AND LOGIC:-
+Find the smallest element in the array.
+
+Swap it with the first element.
+
+Then, find the next smallest element (ignoring the first), and swap it with the second element.
+
+Repeat this process until the entire array is sorted.
+
+It sorts the array by selecting the smallest (or largest) element one by one.
+
+
   
