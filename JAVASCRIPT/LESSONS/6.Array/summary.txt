@@ -27,6 +27,12 @@ Map :-
         //code
       }) 
 
+Forin Loop :-
+for(let key in array_name){
+  console.log(key)
+  console.log(array_name[key])
+}
+
 Updating a array :-
 
 For adding a value in the array there are two methods:-

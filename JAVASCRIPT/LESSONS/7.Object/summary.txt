@@ -1,0 +1,69 @@
+Object 
+:- An object is a way to store related data together in key-value pairs.
+
+ Ex :- let person = {
+       name: "Aman",
+        age: 25,
+        job: "Developer"
+       };
+
+       //important
+       person is an object
+       It has keys: name, age, job    
+       Each key has a value
+
+object format :-
+ let object_name ={
+       key:value pair
+ }
+
+//For accessing the object we will use member access operator  (.)
+
+ format:- object_name.key
+ Example :-
+      console.log(person.name) //Aman
+       console.log(person.age) //25
+
+//Array of Object 
+:-An array of objects is just a list of items, where each item is an object.
+  Each object can hold multiple pieces of related data using key-value pairs.
+
+   Think of it like a classroom:
+   The array is the class.
+   Each object is a student with their own details.
+
+//Example:-
+let students = [
+  { name: "Rahul", age: 20, course: "FSD" },
+  { name: "Priya", age: 22, course: "Java" },
+  { name: "Amit", age: 21, course: "Python" }
+]
+
+🔹 What is Destructuring?
+:-Destructuring means breaking apart an array or object and storing the values in variables directly.
+  It's like unpacking a gift box into smaller, labeled boxes.
+
+// Destructuring of Array and Objects
+:-  
+ let array = [1, 2, 3, 4]
+ let object = { key1: "value1", key2: "value2" }
+ let [a, b, c, d] = array
+ console.log(a)
+ console.log(d)
+
+Example:-
+ let fruits = ["apple", "banana", "mango"];
+
+  let [a, b, c] = fruits;
+
+  console.log(a); // apple
+  console.log(b); // banana
+  console.log(c); // mango
+
+//Spread of operator
+:- The spread operator (...) is like saying:
+  “Take everything from this array or object and unpack it here.”
+  It’s used to copy, merge, or expand arrays and objects.
+  
+Example:-
+  console.log(...array)

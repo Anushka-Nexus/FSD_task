@@ -1,0 +1,35 @@
+Multi-dimensional Array or Array of array
+:-A multi-dimensional array is just an array inside another array. You can think of it like a table or a grid—rows and columns.
+
+2-d array :- let matrix = [
+  [1, 2, 3],
+  [4, 5, 6],
+  [7, 8, 9]
+];
+This is a 2D array (2-dimensional array).
+
+ It has:
+ 3 rows (outer arrays)
+ Each row has 3 columns (inner arrays)
+
+You can access the values like this:
+ console.log(matrix[0][0]); // 1 (first row, first column)
+ console.log(matrix[1][2]); // 6 (second row, third column)
+
+In a simple words
+  1D array = a list: [1, 2, 3]
+  
+  2D array = a table: [[1, 2], [3, 4]]
+  
+  3D array = a cube or a list of tables {face,row,column}
+
+**3-dimensional Array**
+:-A 3D array is an array of 2D arrays.
+
+You can imagine it like a stack of tables (or a cube):
+
+  A 1D array is a list
+  
+  A 2D array is a table (rows and columns)
+  
+  A 3D array is a collection of tables
