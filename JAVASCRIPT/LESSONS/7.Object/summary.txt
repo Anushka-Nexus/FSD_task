@@ -67,3 +67,4 @@ Example:-
   
 Example:-
   console.log(...array)
+

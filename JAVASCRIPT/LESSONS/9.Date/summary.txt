@@ -1,0 +1,142 @@
+Date 
+:-A Date object is a built-in object in JavaScript that lets you work with dates and times — like getting the current date, extracting the year/month/day, or creating a date for a specific day.
+
+Creating a Date object
+  let now = new Date(); // current date and time
+  let specificDate = new Date('2023-08-27'); // a specific date
+  let fromMillis = new Date(1693123200000); // date from milliseconds since Jan 1, 1970 
+
+  Using :-
+  let specificDate = new Date('2023-08-27'); // a specific date
+
+  console.log(specificDate.getFullYear());  // 2023
+  console.log(specificDate.getMonth());     // 7  (months are zero-based here!)
+  console.log(specificDate.getDate());      // 27
+
+  How can we use it ?
+   new Date().properties
+   new Date().methods()
+
+There are two types of method:-
+
+          ***SETTER***
+
+    (1)date.setTime(0):-ate.setTime(milliseconds) is a method in JavaScript that sets the date and time of a Date object based on milliseconds     since January 1, 1970 (UTC) — which is called the Unix Epoch.
+       
+        Syntax:
+           date.setTime(milliseconds)
+           milliseconds: A number representing the time since 1970-01-01, in milliseconds.
+
+        Example:-
+        let date = new Date();       // Current date and time
+        console.log(date);           // e.g. Wed Aug 27 2025 14:00:00
+        
+        date.setTime(0);             // Set time to 0 milliseconds after 1970
+        console.log(date);           // Thu Jan 01 1970 05:30:00 GMT+0530 (India Standard Time)
+
+   (2)date.setDate():-setDate() is a method used to change the day of the month in a JavaScript Date object.
+       
+       Syntax:-
+          date.setDate(dayNumber)
+          dayNumber: A number (1–31) representing the day of the month you want to set.
+
+   (3)date.setMonth():-setMonth() is a method that lets you change the month of a JavaScript Date object.
+
+       Syntax:-
+         date.setMonth(monthIndex)
+         monthIndex: A number from 0 to 11, where:
+             0 = January
+             1 = February
+             ...
+             11 = December
+              Note: Months are zero-based in JavaScript.
+
+   (4)date.setFullYear():-setFullYear() is a method used to change the year of a Date object.
+
+        Syntax:-
+           date.setFullYear(year, month, day)
+             year → (Required) 4-digit year like 2025, 2023
+             month → (Optional) month (0 = Jan, 11 = Dec)
+             day → (Optional) day of the month (1–31)
+
+        Example:-
+          let myDate = new Date("2020-08-27");
+          
+          myDate.setFullYear(2025);
+          console.log(myDate);  // Wed Aug 27 2025 
+    
+   (5)date.setHours():-Used to change the hours. [Hour (0–23) 13 → 1 PM]
+        
+         Syntax:-
+           date.setHours(value)
+           value will be from 0-23 in hours
+
+   (6)setMinutes(minutes):-Sets the minutes (0–59)
+
+      Example:-
+      date.setMinutes(30)
+
+   (7)setSeconds(seconds)S:-ets the seconds (0–59)
+
+      Example:-
+      date.setSeconds(45)
+
+   (8)setMilliseconds(ms):-Sets the milliseconds (0–999)
+        Example:-
+          date.setMilliseconds(250)
+
+   (9)setTime(ms):-Sets the time in milliseconds since 1970
+        Example:-
+         date.setTime(1150070400000)
+
+   **GETTERS**
+    In JavaScript, getters are used to retrieve values
+
+   (1)getFullYear():-Gets the full year (e.g., 2025)
+      
+      Example:-
+      date.getFullYear()
+
+  (2)getMonth():-Gets month (0–11)
+
+       Example:-
+       date.getMonth()
+      
+   (3)getDate():-Gets date of the month(1-31)
+  
+       Example:-
+       date.getDate()
+
+   (4)getDay():-Gets day of the week(0-6) //0- sunday 
+  
+       Example:-
+       date.getDay()
+   
+   (5)getHours():-Gets hours(0-23)
+  
+       Example:-
+       date.getHours()
+
+   (6)getMinutes():-Gets minutes(0-59)
+  
+       Example:-
+       date.getMinutes()
+
+   (7)getSeconds():-Gets seconds(0-59)
+  
+       Example:-
+       date.getSeconds()
+   
+   (8)getMilliseconds():-Gets milliseconds(0-999)
+  
+       Example:-
+       date.getMilliseconds()
+
+   (9)getTime():-Gets timestamp (ms since 1970)
+
+       Example:-
+        date.getTime()
+
+   (10)getTimezoneOffset():-Gets timezone offset in minutes
+      Example:-
+       date.getTimezoneOffset()

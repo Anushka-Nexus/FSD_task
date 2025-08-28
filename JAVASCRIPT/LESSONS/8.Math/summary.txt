@@ -1,0 +1,157 @@
+Math :-
+JavaScript provides a built-in Math object that includes a collection of functions and constants for performing mathematical operations.
+
+There are some properties:-
+  (1) Math.PI(value) :- Gives pi value
+  (2) Math.SQRT2 :- Gives value of square-root of 2
+  (3) Math.SQRT1_2 :-  Gives value of square-root of 1/2
+  (4) Math.LN2 :- :-  Gives value of  log 2 
+  
+Q.What is toFixed()?
+:- toFixed() is a JavaScript method that formats a number to a fixed number of decimal places.
+
+   Format :- number.toFixed(digits)
+   Here, digits = how many numbers you want after the decimal point.
+
+There  are some methods :-
+  (1) Math.sqrt(n):- Math.sqrt(n) gives you the square root of a number n.
+      
+      Syntax:
+       Math.sqrt(n)
+       n is the number you want the square root of.
+  (2) Math.cbrt(n):- Math.cbrt(n) gives you the cube root of a number n.
+      
+      Syntax:
+       Math.cbrt(n)
+       n is the number you want the cube root of.
+
+  (3)Math.pow(n,power):- Gives Raise n to the power of power variable.In other words, multiply n by itself power times.
+    
+     Syntax:
+       Math.pow(base, exponent)
+       base → the number you want to multiply
+       exponent → how many times to multiply it by itself
+  
+  (4)Math.round(n) :-Math.round(n) rounds a number to the nearest whole number (also called an integer).
+     
+     Conditional Rounding Rules:
+            Decimal Part	          What Happens?	                      Example
+             < 0.5	                 Rounds down	                  Math.round(4.3) → 4
+             ≥ 0.5	                 Rounds up	                    Math.round(4.6) → 5
+             Exactly .5	             Rounds up	                    Math.round(7.5) → 8
+
+      Syntax:-
+        Math.round(n)
+        n is any number (can be decimal).
+        It returns a whole number, based on how close the decimal is to the next or previous integer.
+
+  (5)Math.floor(n):-In JavaScript, Math.floor(n) is a built-in method that returns the largest integer less than or equal to a given number n.
+                    In a simple words,It rounds down a number to the nearest whole number.
+
+        Syntax :-
+           Math.floor(n)
+           n is the number you want to round down.         
+           Returns an integer.
+
+        Example:-
+           Math.floor(4.9)    // returns 4
+           Math.floor(3.1)    // returns 3
+           Math.floor(4.0)    // returns 4
+           Math.floor(-4.1)   // returns -5
+           Math.floor(-4.9)   // returns -5
+
+  (6)Math.ceil(n) :-Math.ceil(n) returns the smallest integer greater than or equal to the number n.
+                    In other words, it rounds up to the nearest whole number.
+
+     Syntax :-
+        Math.ceil(n)
+        n: A number (can be positive or negative).       
+        Returns: An integer (rounded up).
+
+      Example:-
+        Math.ceil(4.1)     // returns 5
+        Math.ceil(4.9)     // returns 5
+        Math.ceil(4.0)     // returns 4
+        Math.ceil(-4.1)    // returns -4
+        Math.ceil(-4.9)    // returns -4
+
+  (7)Math.trunc(n):-Math.trunc(n) is a method that returns the integer part of a number by removing the fractional (decimal) part — it does not round, it just chops off everything after the decimal point.
+
+      Syntax:
+        Math.trunc(n)       
+        n: A number (can be positive or negative)       
+        Returns: An integer (just the whole number part)
+
+      Example:-
+        Math.trunc(4.9)     // returns 4
+        Math.trunc(4.1)     // returns 4
+        Math.trunc(-4.9)    // returns -4
+        Math.trunc(-4.1)    // returns -4
+        Math.trunc(0)       // returns 0
+
+  (8)Math.random() :-Math.random() is a built-in JavaScript method that returns a pseudo-random floating-point number in the 
+                    range:-
+                     0 (inclusive) ➡️ 1 (exclusive)
+
+                    That means:
+                     It can return 0                    
+                     It will never return 1                    
+                     Example output: 0.236, 0.9998, 0.005, etc.
+                   
+                   Syntax :- 
+                     Math.random()
+                      No parameters.
+                      Returns a floating-point number between 0 (inclusive) and 1 (exclusive).
+
+  (9)Math.abs():- Math.abs(n) is a built-in JavaScript method that returns the absolute value of a number n.
+                  The absolute value of a number is its distance from 0, regardless of direction — so it’s always non-negative.
+                      Math.abs(5) → 5
+                      Math.abs(-5) → 5
+
+                  Syntax:-
+                   Math.abs(n)
+                   n: Any number (positive, negative, or zero)
+                   Returns: A non-negative number
+
+  (10)Math.log() :-Math.log(n) returns the natural logarithm (base e) of a number n.
+
+                 Syntax :-
+                 Math.log(n)
+                  n: A positive number.
+                  Returns: The natural logarithm of n.
+
+                Example:-
+                  Math.log(1);       // 0     → Because e^0 = 1
+                  Math.log(Math.E);  // 1     → Because e^1 = e
+                  Math.log(10);      // ~2.302
+                  Math.log(100);     // ~4.605
+
+  (11)Math.log10(n):- Math.log10(n) returns the base-10 logarithm of a number n.
+
+                      Syntax:-
+                       Math.log10(n)
+                       n: A positive number
+                       Returns: The base-10 logarithm of n
+
+      
+  (12)Math.sign(n):-Math.sign(n) is a built-in function that returns the sign of a number n.
+              
+                What it does?
+                If n is positive, it returns 1.
+                If n is negative, it returns -1.
+                If n is zero (including -0), it returns 0 (or -0 respectively).
+                If n is not a number (NaN), it returns NaN.
+ 
+               Examples:
+                Math.sign(10);    // returns 1
+                Math.sign(-5);    // returns -1
+                Math.sign(0);     // returns 0
+                Math.sign(-0);    // returns -0
+                Math.sign(NaN);   // returns NaN
+               
+  
+
+
+
+
+
