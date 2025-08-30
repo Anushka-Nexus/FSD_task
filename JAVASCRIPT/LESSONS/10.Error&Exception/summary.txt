@@ -1,0 +1,39 @@
+Error and Exceptional handling
+
+What is an error in JavaScript?
+ :-An error is when something goes wrong in your code, so JavaScript doesn’t know what to do.
+   Example of an Error:
+    console.log(name);
+    
+    If you didn’t define name, JavaScript will say:
+    Uncaught ReferenceError: name is not defined
+
+Common Types of Errors:
+ (1)ReferenceError – You used a variable that doesn't exist.
+ (2)SyntaxError – You typed something wrong (missing ) or {} ().
+ (3)TypeError – You did something wrong with a value (like calling a number like a function).
+
+
+What is Exception Handling?
+:-Exception handling is a way to deal with errors in your code without crashing everything. Instead of letting errors stop your program, you handle them in a safe way.
+
+Why?
+:- Sometimes, things go wrong in your code (like fetching data from a server or dividing by 0).
+   You don’t want your whole app to break because of one little mistake.
+   So, you catch the error and handle it.
+
+Basic Example of Exception Handling:
+
+ JavaScript gives us a way to catch errors and handle them gracefully using try, catch, and finally.
+  
+   1. try Block: You write your risky code here.
+                 If anything goes wrong, it will throw an error, and you can catch it.
+   
+   2. catch Block:- This is where you handle the error if something goes wrong in the try block.
+   
+   3. finally Block (Optional):- Code that will run no matter what, even if there's an error.
+
+Key Takeaways:-
+  try: Write your code that might cause an error.
+  catch: If something goes wrong, you handle the error.
+  finally: Code that always runs after everything (good for cleanup).

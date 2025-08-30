@@ -15,7 +15,11 @@ let diffinms= person1.bod-person2.bod
 let diff_day = diffinms/msinday
 
 console.log(`Difference in days , between birth date of ${person1.name} and ${person2.name} is ${diff_day} days.`);
-
+ if(person1.bod < person2.bod){
+    console.log(`${person1.name} is older than ${person2.name} by ${diff_day} days`)
+ }else{
+     console.log(`${person2.name} is older than ${person1.name} by ${diff_day} days`)
+ }
 //wap in js to assign values within the date object
 
 let date1= new Date()

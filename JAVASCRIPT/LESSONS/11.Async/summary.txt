@@ -1,0 +1,68 @@
+Synchronous and Asynchronous 
+
+Asynchronous programming :- It is a type of programming we can say which execute multiple tasks simultaneously , it saves the time also these tasks should be independent  from each other.
+
+While studying Asynchronous programming we need to understand two concepts :-
+(1)Error and Exceptional handling:-
+    Exception handling is a way to deal with errors in your code without crashing everything. Instead of letting errors stop your program, you handle them in a safe way.
+
+(2)JS Promises :-A Promise is an object that represents a value that might be available now, or in the future, or never. It is used to handle asynchronous operations (like loading data or waiting for an event) without blocking the rest of your code.
+
+Why do we need Promises?
+In JavaScript, we often deal with asynchronous operations like:
+  Making an API call (getting data from the server)
+  Reading a file
+  Waiting for a button click or an animation
+
+These things take time. Instead of making the entire program wait, a Promise lets us handle what happens once the task is finished.
+
+Basic Structure of a Promise:
+ A promise can be in 3 states:
+  (1)Pending: The task is still happening (the promise is not fulfilled yet).
+  (2)Fulfilled: The task was successful, and the promise is kept.
+  (3)Rejected: The task failed, and the promise was broken.
+
+Syntax:
+                These should be Asynchronous.
+                  It has three states :-
+                  (1)pending
+                  (2)Resolved
+                  (3)Rejected
+
+                  It contain within the try-catch-finally(optional) block
+                  try{
+                    promises
+                  }catch(e){
+                    resolved code
+                  }finally{
+                    ye run hoga hi chahe outcome kuch
+                  }
+
+There are two built in async js methods which are :-
+(1)setInterval(callback,[interval]):-setInterval is a JavaScript function that runs a block of code repeatedly at a specified time interval. It keeps running that code every X milliseconds until you stop it using clearInterval().
+   example:-
+       setInterval(()=>{
+        //code which needed to be repeated
+       }
+       ,[interval])
+
+(2)setTimeout(callback,[interval]):-setTimeout is a JavaScript function that runs once after a specified delay (in milliseconds). It's different from setInterval because it only executes once, after waiting the given amount of time.
+    example:-
+       setInterval(()=>{
+        //code which needed to be repeated
+       }
+       ,[interval])
+
+**clearInterval():-clearInterval() is used to stop a repeating action that was started by setInterval(). It doesn't stop the function immediately, but it prevents it from running again after the current cycle.
+   Example:-
+   let count = 0;
+   let intervalID = setInterval(() => {
+       count++;
+       console.log("This is message #" + count);
+   
+       if (count === 5) { // Stop after 5 messages
+           clearInterval(intervalID); // Stop the interval
+           console.log("Interval stopped.");
+       }
+   }, 1000); 
+   
