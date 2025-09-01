@@ -1,0 +1,118 @@
+Js Promise :-A Promise is an object that represents a value that might be available now, or in the future, or never. It is used to handle asynchronous operations (like loading data or waiting for an event) without blocking the rest of your code.
+
+Why do we need Promises?
+In JavaScript, we often deal with asynchronous operations like:
+  Making an API call (getting data from the server)
+  Reading a file
+  Waiting for a button click or an animation
+
+These things take time. Instead of making the entire program wait, a Promise lets us handle what happens once the task is finished.
+
+Basic Structure of a Promise:
+ A promise can be in 3 states:
+  (1)Pending: The task is still happening (the promise is not fulfilled yet).
+  (2)Fulfilled: The task was successful, and the promise is kept.
+  (3)Rejected: The task failed, and the promise was broken.
+
+Syntax:
+                These should be Asynchronous.
+                  It has three states :-
+                  (1)pending
+                  (2)Resolved
+                  (3)Rejected
+
+                  It contain within the try-catch-finally(optional) block
+                  try{
+                    promises
+                  }catch(e){
+                    resolved code
+                  }finally{
+                    ye run hoga hi chahe outcome kuch
+                  }
+                  
+
+CREATING JS PROMISE 
+
+Now when we create a js promise which is a async process we need to create two function 
+
+first function will simply do the process
+second function will use to call it and handel its statuses(resolve,reject)
+
+A BASIC STRUCTURE OF PROMISE USING Catch and then()
+
+function getData() {
+      let data = { status: true, value: 10 }
+      let myPromise = new Promise((resolve, reject) => {
+          setTimeout(() => {
+              if (data.status) {
+                  resolve("data is true")
+              } else {
+                  reject("data is not true")
+              }
+          }, [2000])
+      })
+      return myPromise
+}
+  // console.log(getData())  
+  // to handle/catch a promise we have 2 methods/ways 
+  console.log(1)
+  console.log(2)
+  console.log(3)  
+  console.log(getData( )) 
+  getData().then((resolve) => {
+      console.log("promise was resolved !")
+      console.log(resolve)
+  }).catch((reject) => {
+      console.log("promise was rejected !")
+      console.log(reject)
+  }).finally(() => { console.log("programm completed !")   })
+  console.log(4)
+  console.log(5)
+  console.log(6)
+
+Now the  above method is quite old we didnt use it much
+The useful method we use mostly in js is:-
+ 
+ IMPORTANT :- We use js promise to fetch , upload , download, connection
+
+ async & await insted of js then().catch()
+
+ //YE FUNCTION SIMPLY PROMISE KO JO KRNA HAI VO KR RHA HAI
+ function getData(id) {
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+            if (id == 1) {
+                resolve({ message: "we found person with id 1", data: { name: "xyz", phone: 123 }})
+            } else {
+                reject({ message: "we not found person with id 1"})
+            }
+        }, 2000)
+    })
+}
+
+//ISS PROMISE KO CALL KRNE KE LIYE HM USE KREGE ASYNC AND AWAIT method
+
+async function callPromise() {
+     try {
+         let result = await getData()
+         console.log("promise resolved successfully !")
+         console.log(result)
+     } catch (err) {
+         console.log("an error/exception occured in promise ", err)
+     }
+ }
+
+ YE SIMPLE FUNCTION HOGYA 
+ AGR HME FAT ARROW FUNCTION USE KRNA HO TO 
+
+ let callPromise = async () => {
+    try {
+        let result = await getData(1)
+        console.log("promise resolved successfully !")
+        console.log(result.data)
+    } catch (err) {
+        console.log("an error/exception occured in promise ", err)
+    }
+}
+
+callPromise()

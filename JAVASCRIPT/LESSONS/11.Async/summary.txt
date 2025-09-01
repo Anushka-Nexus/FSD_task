@@ -37,6 +37,7 @@ Syntax:
                   }finally{
                     ye run hoga hi chahe outcome kuch
                   }
+                  
 
 There are two built in async js methods which are :-
 (1)setInterval(callback,[interval]):-setInterval is a JavaScript function that runs a block of code repeatedly at a specified time interval. It keeps running that code every X milliseconds until you stop it using clearInterval().
