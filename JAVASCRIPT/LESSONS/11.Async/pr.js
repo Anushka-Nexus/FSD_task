@@ -37,7 +37,7 @@ function getdata(id_num){
     return new Promise((resolve,reject)=>{
        setTimeout(()=>{
          if(id_num == 100){
-            resolve("ID MATCHED!" + user100{name : "annu" , id :100, occupation: "Engineer"})
+            resolve({message :"ID MATCHED!" , user100 :{name : "annu" , id :100, occupation: "Engineer"}})
         }
         else{
              reject("ID NOT MATCHED!")
