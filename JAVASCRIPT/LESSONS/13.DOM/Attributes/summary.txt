@@ -1,0 +1,50 @@
+DOM MANIPULATION
+
+In js we can use document(html) as an object and can also manipulate various attributes of the targetted element.
+
+Some attribute manipulation properties is written below :-
+  (1)document(object).innerHTML ->  innerHTML is a property in JavaScript used to get or set the HTML content inside an element.
+    
+     But the expression you wrote:
+
+     document(object).innerHTML
+
+     is not correct. It should look like:
+
+    document.getElementById("id").innerHTML
+
+  (2) Properties & Methods related to innerHTML
+          Name	                        Type                                     	What It Does
+        innerHTML                   	Property	                       Gets/sets the HTML content inside an element
+        innerText                   	Property	                       Gets/sets only the visible text inside an element
+        textContent	                  Property	                       Like innerText, but includes hidden text too
+        outerHTML	                    Property	                       Gets/sets the whole element including the tag itself
+        value	                        Property	                      Gets/sets the value in form fields (input, textarea, etc.)
+        setAttribute(attr, value)    	Method	                         Sets an attribute on an element
+        getAttribute(attr)          	Method	                         Gets an attribute's value from an element
+
+
+  (3)Document Properties
+
+                Property	                      Description
+             document.title	                Gets/sets the page title
+             document.URL	                   Returns the full URL of the page
+             document.domain                	Returns the domain name
+             document.body	                Accesses the <body> element
+             document.head	                Accesses the <head> element
+             document.cookie                	Gets/sets browser cookies
+             document.forms	              Returns a list of all <form> elements
+             document.images              	List of all <img> elements
+             document.links	              List of all <a> elements with href
+             
+******************************************************************************************************************************
+  Common document Methods:
+          Method	                                                       What It Does
+   getElementById("id")	                                         Finds an element by its ID
+   getElementsByClassName("class")	                            Gets all elements with that class name
+   getElementsByTagName("tag")	                                Gets all elements with that tag name
+   querySelector("selector")                                   	Gets the first matching element (CSS selector)
+   querySelectorAll("selector")                                 	Gets all matching elements
+   createElement("tag")	                                          Creates a new HTML element
+   createTextNode("text")	                                           Creates a text node
+   write("html")                                                    	Writes HTML directly to the page

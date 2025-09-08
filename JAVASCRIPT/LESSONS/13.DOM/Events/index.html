@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        #b1 {
+            height: 50px;
+            width: 100px;
+            border-radius: 10px;
+            background-color: chartreuse;
+            color: rgb(52, 12, 17);
+        }
+
+        #b2 {
+            height: 50px;
+            width: 100px;
+            border-radius: 14px;
+            background-color: rgb(196, 149, 68);
+            color: rgb(52, 12, 17);
+        }
+    </style>
+</head>
+
+<body>
+    <button id="b1">Click here</button>
+    <button id="b2">Click here</button>
+    <ul id="menu" style="display: none; position: absolute;">
+        <li>op1</li>
+        <li>op2</li>
+        <li>op3</li>
+    </ul>
+    <textarea name="" id="#area" cols="3" rows="2" placeholder="type something"
+        style="height: 60px; width: 120px;"></textarea>
+
+    <form action="" id="form1">
+        <fieldset>
+            <h2 style="font-style: italic;">Form</h2>
+            <label for="fullname">Enter full name :-</label>
+            <input type="text" name="" id="fullname" required>
+            <label for="number">Enter your phone number :-</label>
+            <input type="tel" name="" id="number" required>
+            <button type="submit" id="subbtn">Submit</button>
+        </fieldset>
+      
+    </form>
+      <div id="AlertBtn" style="display: none; height: 40px; width: 100%;">You've submitted your form successfully!</div>
+</body>
+<script src="./event.js"></script>
+
+</html>

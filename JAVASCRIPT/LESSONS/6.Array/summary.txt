@@ -30,7 +30,8 @@ Map :-
 Forin Loop :-
 for(let key in array_name){
   console.log(key)
-  console.log(array_name[key])
+  console.log(array_name[key
+  ])
 }
 
 Updating a array :-

@@ -1,0 +1,75 @@
+
+DOM :-document object model
+  document -> html document (html elements[nodes]|object)
+
+The DOM (Document Object Model) in JavaScript is a programming interface that allows you to interact with and manipulate HTML and XML documents. In simpler terms, the DOM represents your web page as a tree of objects, where each node is an element (like <div>, <p>, etc.), attribute, or piece of text.
+
+In the DOM we use document as an object through which one can access its some properties and methods and also we can manipulate them.
+
+As we use simple objects and access their programming like ob1.properties or methods like data.method()
+
+Here we will use html(document) as an object.
+ So here we will always refer each thing in a way :-
+   document.properties
+   document.method()
+
+Our first topic is :-
+   **TARGETING DOCUMENT 
+
+(1)Targetting tagname :-
+    using :- document.getElementsbyTagName("tagname")
+  :-getElementsByTagName() is a DOM method used to select all elements with the specified tag name.
+  :-Returns: An HTMLCollection (not an array!) of elements with the given tag name.
+  :-It's live, meaning it updates automatically if the document changes.
+  :-Case-insensitive in HTML ("div" and "DIV" are treated the same).
+  :- Returns empty array in case there is none
+
+(2)Targetting class :-
+    classname target :- 
+       document.getElementsbyClassName("classname")
+    :-getElementsByClassName() is a DOM method used to select all elements that have a specific CSS class.
+    :-Returns: An HTMLCollection of all matching elements.
+    :-It’s live, meaning it updates if the DOM changes.
+    :-You can access elements using array-style indexing ([0], [1], etc.).
+
+(3)Targetting id :-
+     id target :- 
+        document.getElementbyId("idname")
+    :-getElementById() is a DOM method used to select a single HTML element by its ID.
+    :-Returns: A single element object that has the matching id
+    :-Returns null if no element with that ID exists.
+    :-ID must be unique in the HTML document.
+
+✅ Interpretation of [] (empty array) and null in JavaScript:
+
+   An empty array ([]) is interpreted as true in a boolean context.
+   Even though it has no elements, it is still a valid object, and all objects are considered "truthy" in JavaScript.
+   
+   null is interpreted as false in a boolean context.
+   null represents the intentional absence of any object value, so JavaScript treats it as "falsy."
+
+
+***CONDITIONAL SELECTORS 
+(1)document.querySelector("")
+
+   :-document.querySelector() is a modern DOM method used to select the first element that matches a CSS selector.
+   :-Syntax:
+       document.querySelector("selector")
+   :-Returns: The first matching element (or null if none found).
+   :-Uses the same selectors as in CSS (.class, #id, tag, etc.).
+   :-More powerful and flexible than older methods like getElementById() or getElementsByClassName().
+
+(2)document.querySelectorAll("")
+
+   :-document.querySelectorAll() is a DOM method used to select all elements that match a given CSS selector.
+   :-Syntax:
+      document.querySelectorAll("selector")
+   :-Returns: A NodeList of all matching elements.
+   :-Uses standard CSS selectors (.class, #id, tag, etc.).
+   :-Unlike querySelector(), it returns all matches, not just the first.
+   :-The returned NodeList is not live (it doesn't update automatically if the DOM changes).
+   :-You can use forEach() directly on the result.
+      
+
+
+

@@ -1,0 +1,107 @@
+ EVENTS IN JS 
+:-An event is something that happens in the browser — like a click, hover, keypress, submit, etc. JavaScript lets you detect and respond to these events.
+
+THERE ARE BASICALLY FOUR TYPES OF EVENTS
+  Mouse event
+  Keyboard event
+  window event
+  Form event
+
+********************************************************************************
+    MOUSE EVENTS
+
+:-Mouse events occur when the user interacts with an element using a mouse (or touchpad). These include clicking, hovering, moving the mouse, etc.
+
+***Common Mouse Events in JavaScript***
+
+                      Event Name	                Triggered When...
+                       click	                   User clicks (left button)
+                       dblclick	                   User double-clicks
+                       mousedown                   	Mouse button is pressed down
+                       mouseup	                   Mouse button is released
+                       mouseenter	            Mouse enters an element (doesn't bubble)
+                       mouseleave	            Mouse leaves an element (doesn't bubble)
+                       mouseover	            Mouse moves over an element (bubbles)
+                       mouseout	                Mouse moves out of an element (bubbles)
+                       mousemove	             Mouse is moved within an element
+                       contextmenu	             User right-clicks (opens context menu)
+
+********************************************************************************
+            KEYBOARD EVENTS 
+
+In JavaScript, keyboard events are used to detect when the user presses or releases a key. The most common keyboard events are:
+
+1. keydown
+:-
+ Triggered when a key is pressed down.
+ Fires repeatedly if the key is held down.
+
+2. keypress (deprecated)
+ :-Used to detect character keys, but it's now deprecated and shouldn't be used.
+
+3. keyup
+ :-Triggered when a key is released.
+
+***Common Properties of the event Object**
+
+  event.key → The key value ("a", "Enter", etc.)
+  
+  event.code → The physical key ("KeyA", "Enter")
+  
+  event.ctrlKey, event.shiftKey, event.altKey, event.metaKey → Modifier keys
+  
+  event.repeat → true if the key is being held down
+
+********************************************************************************
+            FORM EVENTS 
+In JavaScript, form events are used to handle user interactions with forms — such as when users type, submit, reset, or change inputs. Here's a breakdown of the most common form-related events and how to use them.
+
+********Common Form Events************
+             Event	                     Triggered When...
+             submit	              The form is submitted
+             reset	              The form is reset
+             change	              An input element loses focus after a change (for <select>, checkboxes, etc.)
+             input	              User types into a form field (fires immediately)
+             focus	              A form field gains focus
+             blur	               A form field loses focus
+
+********************************************************************************
+            WINDOW EVENTS 
+
+In JavaScript, window events allow you to handle interactions and changes related to the browser window or document — such as loading a page, resizing the window, scrolling, closing a tab, etc.
+
+*** Common window Events***
+             Event                              	Description
+             load	                           Fired when the entire page (including images, stylesheets, etc.) is fully loaded
+             DOMContentLoaded	               Fired when the HTML is loaded and parsed (before images/styles are done loading)
+             resize                          Fired when the browser window is resized
+             scroll	                         Fired when the user scrolls the page
+             beforeunload	                   Fired before the window/tab is closed or refreshed
+             unload	                         Fired when the document is being unloaded (less commonly used)
+             error	                         Fired when an error occurs
+             focus / blur                   	Fired when the window gains or loses focus
+
+We can target element in two ways :-
+
+1st one is :-
+   targetedElement.onevent = (event) =>{}/function(event)
+
+ Example :-
+    document.querySelector("#btn1").ondblclick = () => {
+     alert("button is dbl clicked !")
+ }
+
+2nd one is :-
+     targetedElement.addEventListner("event",(event)=>{})
+
+  Example:-
+     let doSomthing = (event) => {
+     console.log("button is clicked !")
+     console.log(event.screenX)
+     console.log(event.screenY)
+     console.log(event.target)
+     }
+ document.getElementById("btn1").addEventListener("click",doSomthing)
+
+
+    
