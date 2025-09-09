@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+    <style>
+        .customform {
+            background-color: burlywood;
+            display: flex !important;
+            flex-direction: column;
+            gap: 14px !important;
+            width: 100%;
+            max-width: 400px;
+            padding: 20px;
+            border-radius: 8px;
+            font-family: sans-serif;
+        }
+    </style>
+</head>
+
+<body>
+    <form class="customform" id="customform">
+
+        <h3>To do List form</h3>
+        <div><label for="taskname">Enter task:-</label>
+            <input type="text" id="taskname" placeholder="Enter your task" style="padding: 5px; border-radius: 4px;"
+                required>
+        </div>
+        <div>
+            <label for="due">Enter Due Date:-</label>
+            <input type="date" name="due" id="due" required>
+        </div>
+        <div>
+            <label for="priorty">Priorty :-</label>
+            <input type="radio" name="priorty_radiobtn" id="" value="High">High
+            <input type="radio" name="priorty_radiobtn" id="" value="Medium">Medium
+            <input type="radio" name="priorty_radiobtn" id="" value="Low">Low
+        </div>
+        <div>
+            <label for="description">Description :-</label>
+            <textarea name="" id="description" cols="30" rows="3" required></textarea>
+        </div>
+        <button type="submit" style="padding: 5px 10px">Submit</button>
+
+    </form>
+    <table id="table" border="1">
+        <tbody>
+
+        </tbody>
+    </table>
+</body>
+  <script src="./script.js"></script>
+</html>
