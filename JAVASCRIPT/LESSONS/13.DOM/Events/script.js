@@ -18,27 +18,32 @@ function data_fuctn(e) {
     createtable()
 }
 function createtable() {
+    let date = new Date().toLocaleDateString()
+    let time = new Date().toLocaleTimeString()
     let data= store[store.length-1]
     let newRow = document.createElement('tr');
     let col1 = document.createElement('td');
-    col1.textContent = data.work;
+     col1.textContent = data.work;
     let col2 = document.createElement('td');
     col2.textContent = data.date;
     let col3 = document.createElement('td');
     col3.textContent = data.priority;
     let col4 = document.createElement('td');
     col4.textContent = data.Description;
+    let col5 = document.createElement('td');
+    col5.textContent= date
+    let col6 = document.createElement('td');
+    col6.textContent= time
 
-//     newRow.innerHTML = `
-//     <td>${col1}</td>
-//     <td>${col2}</td>
-//     <td>${col3}</td>
-//     <td>${col4}</td>
-//   `
+
+   
     newRow.appendChild(col1)
     newRow.appendChild(col2)
     newRow.appendChild(col3)
     newRow.appendChild(col4)
-
+    newRow.appendChild(col5)
+    newRow.appendChild(col6)
+    
+    table_target.style.display="block"
     table_target.querySelector("tbody").appendChild(newRow);
 }
