@@ -27,6 +27,7 @@ Map :-
         //code
       }) 
 
+Object iterate
 Forin Loop :-
 for(let key in array_name){
   console.log(key)

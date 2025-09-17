@@ -1,0 +1,58 @@
+OOPS :-
+ OOP (Object-Oriented Programming) in JavaScript refers to a programming paradigm that uses objects and their interactions to design
+ applications. JavaScript supports OOP through prototypes, classes, and constructors.
+
+ JavaScript supports OOP using classes, objects, constructors, and inheritance.
+
+ ES6 introduced class syntax (class, extends, super).
+
+ OOP is a way to write code where we use objects to represent real-world things.
+
+Creating a class
+syntax :-
+  class class_name{
+    properties
+    methods()
+  }
+
+  let object = new class_name()
+   object.properties
+   object.methods()
+
+
+************IMPORTANT************ 
+class k andr scope define nhi krna 
+methods() k aage function keyword use nhi krna 
+
+*****************INHERITANCE******************
+Objects can inherit features from other objects/classes.
+ 
+ TYPES OF INHERITANCE:-
+   (1)Single inheritance
+   :- class parent{
+  
+   }
+   //inherting parent class into child
+   class child extends parent{
+  
+   }
+
+   (2)Multi-level inheritance
+   :-
+    class grandparent{
+
+    }
+     //inherting grandparent class into parent
+     class parent extends grandparent{
+  
+   }
+   //inherting parent class into child
+   class child extends parent{
+  
+   }
+
+//polymorphism:- same name function used in different classes with some additional changes making it different by some attributes and working calling polymorphism.
+
+//Encapsulation :-
+  JS supports Encapsulation concept from which we can prevent our data from the user (preventing accessing of the data)
+

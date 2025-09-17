@@ -1,0 +1,63 @@
+*{
+    background-color: black;
+    margin: 0;
+    padding: 0;
+    color: aliceblue;
+}
+.heading{
+    font-size: 2.5rem;
+    font-weight: bold;
+}
+.player{
+    padding: 14px 24px;
+}
+.player.playerX{
+    background-color: red;
+}
+.player.playerO{
+    background-color: yellow;
+}
+.activeplayer{
+    background-color: aquamarine !important;
+}
+.grid-container{
+    display: grid;
+    height: 50vh;
+    width: 50vw;
+    gap: 2rem;
+    grid-template-columns: repeat(3,1fr);
+    grid-template-rows: repeat(3,1fr);
+    position: relative;
+    z-index: 1;
+}
+.grid-container::before{
+    position: absolute;
+    content: "";
+    background-color: aliceblue;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+.buttons{
+    padding: 8px 20px;
+    font-size: 1.2rem;
+    color: #000;
+}
+.show-winner{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    background-color: rgb(30, 237, 7) !important;
+    height: 150px;
+    width: 400px;
+    z-index: 2;
+    font-size: 1.5rem;
+    outline: 1px solid yellow;
+}
+
+.hide-winner-block{
+    display: none ;
+}
