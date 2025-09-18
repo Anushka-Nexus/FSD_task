@@ -8,7 +8,7 @@ let currentPlayer = "X"
 playerx.classList.add("activeplayer")
 let winner_patterns = [
     [0, 1, 2], [3, 4, 5], [6, 7, 8],
-    [0, 3, 6], [1, 4, 7], [2, 4, 8],
+    [0, 3, 6], [1, 4, 7], [2, 5, 8],
     [0, 4, 8], [2, 4, 6]
 ]
 let board = ["", "", "", "", "", "", "", "", ""];
@@ -23,6 +23,8 @@ let time=document.querySelector(".clock")
 let second;
 let timer; //function jo time dikhane wala hai
 
+let winSound = new Audio("Sounds/victorysound1.mp3");
+let loseSound = new Audio("Sounds/lose.mp3");
 //pehle pointer event none hoga
 window.addEventListener("DOMContentLoaded", () => {
     gridcollection.forEach(cell => {
@@ -35,7 +37,13 @@ function startGame() {
     gridcollection.forEach(cell => {
         cell.style.pointerEvents = "auto";
     });
-    alert("First chance is of Player X")
+    
+     toggle_displaywinner.style.display = "block";
+     playerwin.innerHTML = `First chance is of Player X `
+     toggle_displaywinner.addEventListener("click",()=>{
+        toggle_displaywinner.style.display = "none";
+     })
+   
     timerstart()
 }
 
@@ -49,9 +57,11 @@ gridcollection.forEach(Item => {
         }
         e.target.innerHTML = currentPlayer
         moves(move, currentPlayer)
-        checkwinner()
-        changeplayer()
-        drawngame()
+         let winnerFound = checkwinner(); 
+         if (winnerFound) return;
+
+         changeplayer()
+         drawngame()
     })
 })
 
@@ -70,46 +80,40 @@ function changeplayer() {
 }
 
 function moves(target, player) {
-    let flagtarget = 0;
-    let flagplayer = 0;
-    let flagvalid = 0;
-    if (target >= 0 && target < 9) {
-        flagtarget = 1
-    }
-    if (board[target] == "X" || board[target] == "O") {
-        flagplayer = 1
-    }
-    if (board[target] === "") {
-        flagvalid = 1
-    }
-    if (flagtarget == 1 && flagvalid == 1) {
-        //update
+   
+        if (target >= 0 && target < 9 && board[target] === "") {
         board[target] = player;
-        store.push({
-            position: target,
-            player: player
-        });
+        store.push({ position: target, player: player });
     }
+
 
 }
 
+
 function checkwinner() {
-    winner_patterns.forEach((pattern) => {
-
-        let [ele1, ele2, ele3] = pattern
-        if (board[ele1] && board[ele1] == board[ele2] && board[ele1]== board[ele3] ) {
-            let winner = board[ele1]
+    for (let pattern of winner_patterns) {
+        let [ele1, ele2, ele3] = pattern;
+        if (board[ele1] && board[ele1] === board[ele2] && board[ele1] === board[ele3]) {
+            let winner = board[ele1];
             toggle_displaywinner.style.display = "block";
-            playerwin.innerHTML = `Congratulations !The winner is Player ${winner}`
-            gridcollection.forEach(cell => {
-                cell.style.pointerEvents = "none";
-            })
-                stoptimer()
-               return;
-        }
-    
-    })
+            playerwin.innerHTML = `Congratulations! The winner is Player ${winner}`;
+            winSound.play();
+            
+             [ele1,ele2,ele3].forEach(index=> {
+                   gridcollection[index].style.backgroundColor = "green"
+                  
+             })
 
+            gridcollection.forEach(cell => {
+                gridcollection[cell].style.pointerEvents = "none";
+               
+            });
+
+            stoptimer();
+            return true; 
+        }
+    }
+    return false; 
 }
 
 document.querySelector(".reset").addEventListener("click", resetGame);
@@ -125,6 +129,8 @@ function resetGame() {
     gridcollection.forEach(cell => {
         cell.innerHTML = "";
         cell.style.pointerEvents = "none";
+        cell.style.backgroundColor = "black";
+        cell.style.boxShadow="none"
     });
    stoptimer() //stoping timer
    second=0  //reinitialize
@@ -134,7 +140,11 @@ function resetGame() {
     playerx.classList.add("activeplayer");
     playero.classList.remove("activeplayer");
   
-    alert("Please click on the start button to start your game!")
+     toggle_displaywinner.style.display = "block";
+     playerwin.innerHTML = `Please click on the start button to start your game`
+     toggle_displaywinner.addEventListener("click",()=>{
+        toggle_displaywinner.style.display = "none";
+     })
    
 }
 
@@ -145,6 +155,7 @@ function drawngame() {
         toggle_displaywinner.style.display = "block";
         playerwin.innerHTML = `Sorry the game is drawn`
          stoptimer()
+         loseSound.play()
     }
    
 }
