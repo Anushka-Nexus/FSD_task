@@ -25,17 +25,19 @@ let timer; //function jo time dikhane wala hai
 
 let winSound = new Audio("Sounds/victorysound1.mp3");
 let loseSound = new Audio("Sounds/lose.mp3");
+
 //pehle pointer event none hoga
 window.addEventListener("DOMContentLoaded", () => {
     gridcollection.forEach(cell => {
         cell.style.pointerEvents = "none";
     });
-});
+})
+
 //start pr click krne k baad event auto
 function startGame() {
     currentPlayer="X"
     gridcollection.forEach(cell => {
-        cell.style.pointerEvents = "auto";
+       cell.style.pointerEvents = "auto";
     });
     
      toggle_displaywinner.style.display = "block";
@@ -97,6 +99,7 @@ function checkwinner() {
             let winner = board[ele1];
             toggle_displaywinner.style.display = "block";
             playerwin.innerHTML = `Congratulations! The winner is Player ${winner}`;
+            stoptimer();
             winSound.play();
             
              [ele1,ele2,ele3].forEach(index=> {
@@ -104,12 +107,13 @@ function checkwinner() {
                   
              })
 
-            gridcollection.forEach(cell => {
-                gridcollection[cell].style.pointerEvents = "none";
+            gridcollection.forEach(cell=> {
+                 cell.style.pointerEvents = "none";
                
-            });
+               
+            })
 
-            stoptimer();
+
             return true; 
         }
     }
