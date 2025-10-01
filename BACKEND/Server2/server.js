@@ -1,17 +1,19 @@
- import express from `express`
-  const app = express()
- import dotenv from `dotenv`
+ import express from "express";
+  const app = express();
+ import dotenv from 'dotenv';
    
 
- import route from `./Routers/router`
+ import {route} from './Routers/router.js';
 
- dotenv.config({ path: "./config.env" })
+ dotenv.config({ path: "./config.env" });
 
- let port = process.env.PORT
+ let port = process.env.PORT;
 
- app.use(express.static("Public"))
+ app.use(express.static("Public"));
 
- app.use(route)
+ app.set('views', './View');
+ app.set('view engine', 'ejs');
+ app.use(route);
 
  app.listen(port, () => {
     console.log(`server is running on port ${port} !`)
