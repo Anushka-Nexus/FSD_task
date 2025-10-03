@@ -1,4 +1,25 @@
 <%- include("./Partial/header.ejs") %>
 <h1>This is index.ejs page</h1>
+ <form action="/form1" method="post">
+       <label for="name1">ENTER YOUR NAME:-</label>
+        <input type="text" id="name1" placeholder="enter your name" size="40" name="name"><br>
+        <label for="nm1">ENTER YOUR CONTACT NO. :-</label>
+        <input type="tel" name="contact" id="nm1" placeholder="enter your contact" required /><br>
+       
+        <label for="em1">ENTER YOUR EMAIL :-</label>
+        <input type="email" name="email" id="em1" placeholder="enter your email" required /><br>
+        <button style="padding: 5px;">Submit</button>
+ </form>
+ <table border="1">
+     
+      <% data.forEach(item => { %>
+    <tr>
+        <td><%= item.name %></td>
+        <td><%= item.contact %></td>
+        <td><%= item.email %></td>
+    </tr>
+<% }) %>
+
+ </table>
 <%- include("./Partial/footer.ejs") %>
     

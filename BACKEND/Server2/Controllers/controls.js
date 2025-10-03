@@ -1,5 +1,8 @@
+import express from "express"
+const subdata=[]
 const getHome=(request,response)=>{
-    response.status(200).render("index")
+    response.status(200).render("index" ,({data:subdata}))
+    //index.ejs page se hm data ko render krege aur fir usse use krege
 }
 
 const getAbout=(request,response)=>{
@@ -12,4 +15,15 @@ const getProduct=(request,response)=>{
     response.status(200).render("product")
 }
 
-export {getHome , getAbout, getContact,getProduct}
+const postform=(request,response)=>{
+    const { name, contact, email } = request.body
+    subdata.push({
+         name,
+         contact,
+         email
+    })
+    //data push kiya nd then redirect
+    response.status(301).redirect("/")
+   
+}
+export {getHome , getAbout, getContact,getProduct , postform}
