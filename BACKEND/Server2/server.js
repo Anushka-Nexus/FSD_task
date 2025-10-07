@@ -1,6 +1,7 @@
- import express, { urlencoded } from "express";
+ import express from "express";
   const app = express();
  import dotenv from 'dotenv';
+ import ejs from "ejs"
    
 
  import {route} from './Routers/router.js';
