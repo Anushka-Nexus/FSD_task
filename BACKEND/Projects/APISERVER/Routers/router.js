@@ -1,5 +1,5 @@
 import express from "express"
-import { IntroApi , allLanguages, RandomLanguages} from "../Controller/Controls.js"
+import { IntroApi , allLanguages, RandomLanguages ,FilteredLanguages} from "../Controller/Controls.js"
  
 const route = express.Router()
 
@@ -13,7 +13,8 @@ route.get("/allLanguages",allLanguages)
 
 route.get("/RandomLanguages",RandomLanguages)
 
+route.get("/Filters",FilteredLanguages)
 
-// route.get("")
-// route.get()
+
+
 export {route}
