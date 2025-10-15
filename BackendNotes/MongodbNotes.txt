@@ -206,7 +206,230 @@ When to Use What?
     You need fast access, search, or analytics
     You want real-time applications (chat, IoT, etc.)
     You need reliable multi-user access
-   
+
+Structure of MongoDB
+Hierarchy:
+MongoDB Server
+└── Databases
+    └── Collections (like tables)
+        └── Documents (like rows, but JSON-like)
+
+First one need to create a database 
+command :- 
+ use databasename
+
+Then create collection
+command :-
+  db.createCollection("collection_name")
+  this create collection
+
+Create document
+command :-
+  db.collection_name.insertOne({name:"anu",age:19,phone:9876534677})
+  ex:-
+     db.students.insertOne(
+    {
+        _id: 3,
+        name: "student3",
+        phone : 8237895726,
+        age : 23,
+        address: {
+            street: "plot 4, sharda layout",
+            city: "nagpur",
+            pincode: "440024",
+            state: "Maharashtra"
+        }
+    }
+) 
+
+  after executing this command mongodb allocate a unique id to each document.
+
+2nd command:-
+db.collection_name.insertMany([
+  {},{},{}
+])
+
+ex:-
+   db.customers.insertMany([
+    {_id:1, name : "Anushka",phone:7688980887, address : "Chatrapati Nagar", state : "Maharashtra"},
+    {_id:2, name : "Shreyash",phone:677980847, address :"Jaitala",state : "Maharashtra"},
+    {_id:3, name : "Purva", phone:9087677887, address : "Pratap Nagar",state : "Maharashtra"},
+    {_id:4, name : "Mahima",phone:6998934587, address : "Bahadura Fata",state : "Maharashtra"}
+])
+
+ex:-
+  db.Products.insertMany([
+    {_id:51, name : "Lamp", stock: 100, selling_price : 220, discount: 5},
+    {_id:52, name : "Wall Hanging", stock: 100, selling_price : 300, discount: 15},
+    {_id:53, name : "Sofa Cover", stock: 110, selling_price : 400, discount: 12},
+    {_id:54, name : "Ink", stock: 40, selling_price : 55, discount: 10},
+     {_id:55, name : "Painting", stock: 60, selling_price : 500, discount: 15},
+       {_id:56, name : "Aesthetic Mirror", stock: 50, selling_price : 900, discount: 15}
+
+])
+
+ex:-
+
+there are more two commands 
+show collection :- display the collection present within the database
+
+show dbs :- display name od database created within the mongodb
+
+READ commands
+ 
+ db.collection_name.findOne({}):- returns null or an object
+
+ db.collection_name.find({}) ->returns [] / [objects]
+
+ {fieldname :"value"}
 
 
+Read Operations
+Read operations retrieve documents from a collection; i.e. query a collection for documents. MongoDB provides the following methods to read documents from a collection:
 
+db.collection.find()
+
+You can specify query filters or criteria that identify the documents to return.
+
+comparision oprators
+
+$gt - greater than
+$gte - greater than equals
+$lt - less than
+$lte - less than equals
+$in - for range
+$nin - not in range
+$eq - equals
+$ne - not equals
+
+{ age : {$lt : 20} }
+
+
+Database1> db.customers.find({_id:3})
+[
+  {
+    _id: 3,
+    name: 'Purva',
+    phone: 9087677887,
+    address: 'Pratap Nagar',
+    state: 'Maharashtra'
+  }
+]
+Database1> db.Products.find({stock:100,_id:51})
+[
+  {
+    _id: 51,
+    name: 'Lamp',
+    stock: 100,
+    selling_price: 220,
+    discount: 5
+  }
+]
+
+
+Read Conditionally :-
+
+db.Products.find({
+  $or: [
+    { selling_price: { $lt: 400 } },
+    { discount: { $gt: 5 } }
+  ]
+})
+
+output:-
+Database1> db.Products.find({
+...   $or: [
+...     { selling_price: { $lt: 400 } },
+...     { discount: { $gt: 5 } }
+...   ]
+... })
+[
+  {
+    _id: 51,
+    name: 'Lamp',
+    stock: 100,
+    selling_price: 220,
+    discount: 5
+  },
+  {
+    _id: 52,
+    name: 'Wall Hanging',
+    stock: 100,
+    selling_price: 300,
+    discount: 15
+  },
+  {
+    _id: 53,
+    name: 'Sofa Cover',
+    stock: 110,
+    selling_price: 400,
+    discount: 12
+  },
+  { _id: 54, name: 'Ink', stock: 40, selling_price: 55, discount: 10 },
+  {
+    _id: 55,
+    name: 'Painting',
+    stock: 60,
+    selling_price: 500,
+    discount: 15
+  },
+  {
+    _id: 56,
+    name: 'Aesthetic Mirror',
+    stock: 50,
+    selling_price: 900,
+    discount: 15
+  }
+]
+
+Using nor:-
+db.Products.find({
+  $nor: [
+    { selling_price: { $lt: 400 } },
+    { discount: { $gt: 15 } }
+  ]
+})
+
+output:-
+[
+  {
+    _id: 53,
+    name: 'Sofa Cover',
+    stock: 110,
+    selling_price: 400,
+    discount: 12
+  },
+  {
+    _id: 55,
+    name: 'Painting',
+    stock: 60,
+    selling_price: 500,
+    discount: 15
+  },
+  {
+    _id: 56,
+    name: 'Aesthetic Mirror',
+    stock: 50,
+    selling_price: 900,
+    discount: 15
+  }
+]
+
+Using not :-
+db.Products.find(
+  {
+    $not : {selling_price:220}
+    
+  }
+
+)
+:-
+
+Database1> db.Products.find(
+...   {
+...     $not : {selling_price:220}
+...
+...   }
+...
+... )
+MongoServerError[BadValue]: unknown top level operator: $not. If you are trying to negate an entire expression, use $nor.
