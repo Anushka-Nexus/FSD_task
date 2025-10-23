@@ -433,3 +433,247 @@ Database1> db.Products.find(
 ...
 ... )
 MongoServerError[BadValue]: unknown top level operator: $not. If you are trying to negate an entire expression, use $nor.
+
+I had created 
+ languagedatabase (database) -> languages (collection) -> documents
+
+ ******************QUERY********************
+
+languagedatabase> db.languages.find({ id: 5 })
+[
+  {
+    _id: ObjectId('68fa29b05d96ab8bcecebea8'),
+    id: 5,
+    name: 'C++',
+    difficulty: 'Advanced',
+    scope: [ 'Game Development', 'System Software' ],
+    duration: '5 months'
+  }
+]
+---------------------------------------------------------------
+languagedatabase> db.languages.find({ id: { $gt: 5, $lt: 15 } })
+[
+  {
+    _id: ObjectId('68fa29b05d96ab8bcecebea9'),
+    id: 6,
+    name: 'C#',
+    difficulty: 'Intermediate',
+    scope: [ 'Desktop Apps', 'Game Dev with Unity' ],
+    duration: '4 months'
+  },
+  {
+    _id: ObjectId('68fa29b05d96ab8bcecebeaa'),
+    id: 7,
+    name: 'PHP',
+    difficulty: 'Beginner',
+    scope: [ 'Web Development', 'Backend' ],
+    duration: '2 months'
+  },
+  {
+    _id: ObjectId('68fa29b05d96ab8bcecebeab'),
+    id: 8,
+    name: 'Ruby',
+    difficulty: 'Beginner',
+    scope: [ 'Web Development', 'Scripting' ],
+    duration: '2 months'
+  },
+  {
+    _id: ObjectId('68fa29b05d96ab8bcecebeac'),
+    id: 9,
+    name: 'Swift',
+    difficulty: 'Intermediate',
+    scope: [ 'iOS App Development' ],
+    duration: '3 months'
+  },
+  {
+    _id: ObjectId('68fa29b05d96ab8bcecebead'),
+    id: 10,
+    name: 'Kotlin',
+    difficulty: 'Intermediate',
+    scope: [ 'Android Development' ],
+    duration: '3 months'
+  },
+  {
+    _id: ObjectId('68fa29b05d96ab8bcecebeae'),
+    id: 11,
+    name: 'Go',
+    difficulty: 'Intermediate',
+    scope: [ 'Backend Systems', 'Cloud Services' ],
+    duration: '4 months'
+  },
+  {
+    _id: ObjectId('68fa29b05d96ab8bcecebeaf'),
+    id: 12,
+    name: 'Rust',
+    difficulty: 'Advanced',
+    scope: [ 'System Programming', 'Performance Apps' ],
+    duration: '5 months'
+  },
+  {
+    _id: ObjectId('68fa29b05d96ab8bcecebeb0'),
+    id: 13,
+    name: 'TypeScript',
+    difficulty: 'Intermediate',
+    scope: [ 'Web Development', 'Frontend' ],
+    duration: '3 months'
+  },
+  {
+    _id: ObjectId('68fa29b05d96ab8bcecebeb1'),
+    id: 14,
+    name: 'R',
+    difficulty: 'Intermediate',
+    scope: [ 'Data Analysis', 'Machine Learning' ],
+    duration: '4 months'
+  }
+]
+
+--------------------------------------
+languagedatabase> db.languages.find({id : {$ne : 2, $lt :3}})
+[
+  {
+    _id: ObjectId('68fa29b05d96ab8bcecebea4'),
+    id: 1,
+    name: 'Python',
+    difficulty: 'Beginner',
+    scope: [ 'AI', 'Web Development', 'Data Science' ],
+    duration: '3 months'
+  }
+]
+
+----------------------------------------------
+languagedatabase> db.languages.find({scope : "Web Development"})
+[
+  {
+    _id: ObjectId('68fa29b05d96ab8bcecebea4'),
+    id: 1,
+    name: 'Python',
+    difficulty: 'Beginner',
+    scope: [ 'AI', 'Web Development', 'Data Science' ],
+    duration: '3 months'
+  },
+  {
+    _id: ObjectId('68fa29b05d96ab8bcecebea5'),
+    id: 2,
+    name: 'JavaScript',
+    difficulty: 'Beginner',
+    scope: [ 'Web Development', 'Frontend', 'Backend' ],
+    duration: '2 months'
+  },
+  {
+    _id: ObjectId('68fa29b05d96ab8bcecebeaa'),
+    id: 7,
+    name: 'PHP',
+    difficulty: 'Beginner',
+    scope: [ 'Web Development', 'Backend' ],
+    duration: '2 months'
+  },
+  {
+    _id: ObjectId('68fa29b05d96ab8bcecebeab'),
+    id: 8,
+    name: 'Ruby',
+    difficulty: 'Beginner',
+    scope: [ 'Web Development', 'Scripting' ],
+    duration: '2 months'
+  },
+  {
+    _id: ObjectId('68fa29b05d96ab8bcecebeb0'),
+    id: 13,
+    name: 'TypeScript',
+    difficulty: 'Intermediate',
+    scope: [ 'Web Development', 'Frontend' ],
+    duration: '3 months'
+  },
+  {
+    _id: ObjectId('68fa29b05d96ab8bcecebec9'),
+    id: 38,
+    name: 'Crystal',
+    difficulty: 'Intermediate',
+    scope: [ 'Web Development' ],
+    duration: '3 months'
+  }
+]
+
+-----------------------------------------------
+ db.languages.find({scope : { $size : 3}})
+[
+  {
+    _id: ObjectId('68fa29b05d96ab8bcecebea4'),
+    id: 1,
+    name: 'Python',
+    difficulty: 'Beginner',
+    scope: [ 'AI', 'Web Development', 'Data Science' ],
+    duration: '3 months',
+    Rating: 0
+  },
+  {
+    _id: ObjectId('68fa29b05d96ab8bcecebea5'),
+    id: 2,
+    name: 'JavaScript',
+    difficulty: 'Beginner',
+    scope: [ 'Web Development', 'Frontend', 'Backend' ],
+    duration: '2 months',
+    Rating: 0
+  }
+]
+-----------------------------------------------
+languagedatabase> db.languages.updateMany({scope : { $size : 3}},{$set: {Rating : 3}})
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 2,
+  modifiedCount: 2,
+  upsertedCount: 0
+}
+-----------------------------------------------
+ db.languages.find({Rating :3})
+[
+  {
+    _id: ObjectId('68fa29b05d96ab8bcecebea4'),
+    id: 1,
+    name: 'Python',
+    difficulty: 'Beginner',
+    scope: [ 'AI', 'Web Development', 'Data Science' ],
+    duration: '3 months',
+    Rating: 3
+  },
+  {
+    _id: ObjectId('68fa29b05d96ab8bcecebea5'),
+    id: 2,
+    name: 'JavaScript',
+    difficulty: 'Beginner',
+    scope: [ 'Web Development', 'Frontend', 'Backend' ],
+    duration: '2 months',
+    Rating: 3
+  }
+]
+-----------------------------------------------
+ db.languages.updateMany(
+...   { scope: "Backend" },
+...   { $set: { Rating: 4 } }
+... )
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 2,
+  modifiedCount: 2,
+  upsertedCount: 0
+}
+-----------------------------------------------
+ db.languages.updateMany({duration : "2 months"},{$set : {Rating : 2.5}})
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 12,
+  modifiedCount: 12,
+  upsertedCount: 0
+}
+-----------------------------------------------
+ db.languages.updateMany({duration : "5 months"},{$set : {Rating:4.6}})
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 21,
+  modifiedCount: 21,
+  upsertedCount: 0
+}
+-----------------------------------------------
