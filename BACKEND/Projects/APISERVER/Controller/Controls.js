@@ -1,5 +1,5 @@
-import { programmingLanguages } from "../Data/LanguageDataSet.js"
-
+// import { programmingLanguages } from "../Data/LanguageDataSet.js"
+import { LanguageModel } from "../Models/languageSchema.js";
 const IntroApi = async (req, res) => {
     res.status(200).json({
         message: "Welcome to our Language API",
@@ -45,103 +45,150 @@ const IntroApi = async (req, res) => {
     })
 }
 
-const allLanguages = (request, response) => {
-    response.status(200).json({
-        message: `Got all the ${programmingLanguages.length} languages DataSet successfully !`, programmingLanguages
-    })
+const allLanguages = async (request, response) => {
+    // response.status(200).json({
+    //     message: `Got all the ${programmingLanguages.length} languages DataSet successfully !`, programmingLanguages
+    // })
+    try {
+        let result = await LanguageModel.find({})
+        response.status(200).json({
+            message: `Got all the ${result.length} languages DataSet successfully !`, result
+        })
+    } catch (error) {
+        response.status(400).json({
+            message: "Unable to fetch languages please try again", error
+        })
+    }
 }
-const RandomLanguages = (request, response) => {
-    let RandomNo = Math.floor((Math.random() * 98) + 1)
-    let GetRandomLanguage = programmingLanguages.filter((programmingLanguages, index) => {
-        return index == RandomNo
+const RandomLanguages = async (request, response) => {
+    // let RandomNo = Math.floor((Math.random() * 98) + 1)
+    // let GetRandomLanguage = Language.filter((Language, index) => {
+    //     return index == RandomNo
 
-    })
-    let [techs] = GetRandomLanguage
-    response.status(200).json({
-        message: "Got any random DataSet successfully !", techs
-    })
+    // })
+    // let [techs] = GetRandomLanguage
+    // response.status(200).json({
+    //     message: "Got any random DataSet successfully !", techs
+    // })
+    try {
+        let alldocument = await LanguageModel.find({})
+        let RandomNo = Math.floor((Math.random() * 98 + 1))
+
+        let tech = alldocument[RandomNo]
+        response.status(200).json({
+            message: "Got any random DataSet successfully !", tech
+        })
+    } catch {
+        response.status(400).json({
+            message: "Unable to fetch random language from database"
+        })
+    }
 }
-const FilteredLanguages = (request, response) => {
+const FilteredLanguages = async (request, response) => {
+
     try {
         let { scope, duration, difficulty } = request.query
-        let FilteredData = programmingLanguages
         let FiltersUsed = ""
-
 
         if (!scope && !duration && !difficulty) {
             throw ("Invalid filters ! Please enter the valid one (scope, duration or difficulty)")
         }
 
-        if (difficulty) {
-            FilteredData = FilteredData.filter((items) => {
-                return items.difficulty.toLowerCase() === difficulty.toLowerCase().trim()
-            })
-            FiltersUsed += " difficulty "
-        }
-
-        if (duration) {
-
-            FilteredData = FilteredData.filter((item) => {
-                let GetDuration = item.duration.split(" ")
-                //duration m string store h 2 months iss type se vha se split krke ek array bna rhe h ["2","months"] (dataset ka variable use hua)
-                return Number(GetDuration[0]) <= Number((duration).toLowerCase().trim())
-            })
-
-            FiltersUsed += " duration "
-        }
-
+        //filtering by scope
         if (scope) {
-            let Filterscope = scope.split(",").map((item) => {
-                return item.toLowerCase().trim()
-            })
-            //user k query kiye gye scopes to split kiya into array 
-            //map se ensure kiya ki values lowercase m h and trim se ensure kiya ki extra spaces remove kri h
-            FilteredData = FilteredData.filter((items) => {
-                const DataSetScope = items.scope.map((Data) => {
-                    return Data.toLowerCase()
-                })
-
-                return Filterscope.every((item) => {
-                    return DataSetScope.includes(item)
-                    //.includes() method checks if a specific value exists in an array (or in a string).
-                })
-
-            })
+            let ScopeBasedData = await LanguageModel.find({ scope: scope })
             FiltersUsed += " scope "
+            response.status(200).json({
+                message: `Successfully fetched the data based on the ${scope}`, ScopeBasedData
+            })
+        }
+        if (duration) {
+            let DurationBasedData = await LanguageModel.find({ duration: duration })
+            FiltersUsed += " duration "
+            response.status(200).json({
+                message: `Successfully fetched the data based on the ${duration}`, DurationBasedData
+            })
+        }
+        if (difficulty) {
+            let DifficultyBasedData = await LanguageModel.find({ difficulty: difficulty })
+            FiltersUsed = " difficulty"
+            // Allowed enum values list
+            const allowedDifficulties = ["Beginner", "Intermediate", "Advanced"];
 
+            // Check if difficulty is valid
+            if (!allowedDifficulties.includes(difficulty)) {
+                response.status(400).json({
+                    message: `Invalid difficulty value: ${difficulty}. Allowed values are ${allowedDifficulties}.`, FiltersUsed
+                });
+            }
+            response.status(200).json({
+                message: `Successfully fetched the data based on the ${difficulty}`, DifficultyBasedData
+            })
         }
 
-        if (FilteredData.length == 0) throw ("Unable to filter your data based on", FiltersUsed)
 
-
-        response.status(200).json({
-            message: `We have got your filtered data successfully using filters ${FiltersUsed}`,
-            TotalResults: FilteredData.length,
-            Result: FilteredData
-        })
     } catch (error) {
-        console.log("Got errors while filtering :-", error)
-        response.status(500).json({ message: "Unable to filter your result", result: null })
+        response.status(400).json({
+            message: "Please provide at least one valid filter (scope, duration, or difficulty).",
+        });
     }
 
 }
-const IdBasedLanguage = (req, res) => {
+const IdBasedLanguage = async (req, res) => {
+
     try {
         let { id } = req.params
-        if (!id) throw ("Invalid ID !")
-        let Result = programmingLanguages.filter((language) => {
-            return language.id == id
+        if (!id) throw ("Invalid ID!")
+        let IdBasedResult = await LanguageModel.findOne({
+            id: id
         })
 
-        if (Result.length == 0) {
-              res.status(200).json({ message: `Unable get your language based on ${id} id!` }, Result)
+        if (!IdBasedResult) {
+            res.status(200).json({ message: "Couldn't find the language based on the given id! Please provide valid id!" })
         }
 
-        res.status(200).json({ message: `Got your language based on ${id} id!`, Result })
+        res.status(200).json({
+            message: `Got your language of ${id} id`, IdBasedResult
+        })
+    } catch (error) {
+        res.status(400).json({
+            message: "Unable to get your language", error
+        })
+        console.log(error)
     }
-    catch(error){
-         res.status(400).json({ message: "Unable to get language dataset!", error })
-    }
-
 }
-export { IntroApi, allLanguages, RandomLanguages, FilteredLanguages, IdBasedLanguage }
+
+const PostNewDoc = async (req, res) => {
+    try {
+        const { id, name, duration, difficulty, scope } = req.body
+        const NewDoc = new LanguageModel({ id, name, duration, difficulty, scope })
+        await NewDoc.save();
+        res.status(201).json({ message: "Successfully added the new document ", NewDoc })
+    } catch (err) {
+        res.status(400).json({ message: "Unable to add the language", err })
+    }
+}
+export { IntroApi, allLanguages, RandomLanguages, FilteredLanguages, IdBasedLanguage, PostNewDoc }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,6 +1,7 @@
 import express, { json, request, urlencoded } from "express"
 import dotenv from "dotenv"
 import {route} from "./Routers/router.js"
+import "./Database/connection.js"
 import { RootController} from "./Controller/RootControls.js"
 const app= express()
 //instance of express

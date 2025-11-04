@@ -1,5 +1,5 @@
 import express from "express"
-import { IntroApi , allLanguages, RandomLanguages ,FilteredLanguages,IdBasedLanguage} from "../Controller/Controls.js"
+import { IntroApi , allLanguages, RandomLanguages ,FilteredLanguages,IdBasedLanguage,PostNewDoc} from "../Controller/Controls.js"
  
 const route = express.Router()
 
@@ -17,7 +17,7 @@ route.get("/Filters",FilteredLanguages)
 
 route.get("/:id/details",IdBasedLanguage)
 
-
+route.post("/PostNewDocuments",PostNewDoc)
 
 
 export {route}
