@@ -1,6 +1,7 @@
 import express from "express"
 import { UserModel } from "../Models/UserSchema.js"
 import nodemailer from "nodemailer"
+import bcrypt from "bcrypt"
 
 const transporter = nodemailer.createTransport({
    host: "smtp.gmail.com",
@@ -166,14 +167,38 @@ const HandlePasswordReset=async(req,res)=>{
 let HandlePasswordResetOtp=async(req,res)=>{
    try{
      //take email otp newpass from body
+     let {Email,passotp,NewPassword}=req.body
+     
      //check if all fields are present
-     //check if user exist
-     //validate otp
-     //hash password
-     //update the password
-     //save the data
-   }catch(error){
+     if(!Email ||!passotp||!NewPassword)throw("Please pass all the required info that is Email,Otp and new password")
 
+     //check if user exist
+     let PresentUser= await UserModel.findOne({"Email.Email":Email})
+     if(!PresentUser)throw ("Invalid User! User didn't exist.")
+
+     //validate otp 
+      let passwordotp = await redisClient.get(`resetpassword.${Email}`)
+      if(!passwordotp)throw("Expired OTP!")
+      if(passwordotp!=passotp)throw("Incorrect OTP!")
+
+     //hash password
+     let NewHashPassword = await bcrypt.hash(NewPassword, 12)
+
+     //update the password
+     let UpdatePassword = await UserModel.updateOne(
+            { "Email.Email": Email },
+            { $set: { Password: NewHashPassword } }
+        )
+     
+   //if already updated
+       if (UpdatePassword.modifiedCount == 0) throw("Didn't update the information!")
+
+    //sending response
+     res.status(200).json({ message: "Verified new password!" })
+   }catch(error){
+       res.status(400).json({ 
+         message: "Unable to reset password!", error
+       })
    }
 }
 export { PostUserRegister , HandleEmailOtp ,HandlePasswordReset,HandlePasswordResetOtp}
