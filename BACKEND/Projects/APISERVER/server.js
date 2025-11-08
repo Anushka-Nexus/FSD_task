@@ -1,4 +1,4 @@
-import express, { json, request, urlencoded } from "express"
+import express from "express"
 import dotenv from "dotenv"
 import {route} from "./Routers/router.js"
 import "./Database/connection.js"
