@@ -2,6 +2,8 @@ import express from "express"
 import { UserModel } from "../Models/UserSchema.js"
 import nodemailer from "nodemailer"
 import bcrypt from "bcrypt"
+import jwt from "jsonwebtoken"
+
 
 const transporter = nodemailer.createTransport({
    host: "smtp.gmail.com",
@@ -39,8 +41,8 @@ let SendEmail = async (Email) => {
       return SendedMailResult
 
    } catch (error) {
-        console.log("Unable to send the user!")
-        console.log(error)
+      console.log("Unable to send the user!")
+      console.log(error)
    }
 }
 let PostUserRegister = async (request, response) => {
@@ -69,7 +71,7 @@ let PostUserRegister = async (request, response) => {
       let EmailObject = {
          Email: Email, verified: false
       }
-       
+
       await SendEmail(Email)
       //Register new user
       let NewUser = new UserModel({ Name, Phone, Email: EmailObject, Address, Password })
@@ -89,61 +91,61 @@ let PostUserRegister = async (request, response) => {
    }
 }
 
-const HandleEmailOtp=async(req,res)=>{
-  try{
-    let {Email,otp}=req.body
-    if(!Email || !otp)throw("INVALID DATA!")
-    
+const HandleEmailOtp = async (req, res) => {
+   try {
+      let { Email, otp } = req.body
+      if (!Email || !otp) throw ("INVALID DATA!")
+
       let User = await UserModel.findOne({
-         "Email.Email" : Email
+         "Email.Email": Email
       })
 
       //user register na ho to
-      if(!User)throw("Please register the user first!")
-       
+      if (!User) throw ("Please register the user first!")
+
       let StoredUserOtp = await redisClient.get(`User.${User.Email.Email}`)
-       
-       if(!StoredUserOtp) throw("Invalid OTP!")
-        
-         //if otp is diff from stored one from user 
-       if(StoredUserOtp != otp) throw("Incorrect OTP!Please try again..")
 
-       let NewUpdatedResult = await UserModel.updateOne({ "Email.Email": Email }, { "Email.Verified": true })
-       
-       //if already updated
-       if (NewUpdatedResult.modifiedCount == 0) throw("Didn't update the information!")
+      if (!StoredUserOtp) throw ("Invalid OTP!")
 
-       res.status(202).json({
-          message: "Verified OTP successfully!"
+      //if otp is diff from stored one from user 
+      if (StoredUserOtp != otp) throw ("Incorrect OTP!Please try again..")
+
+      let NewUpdatedResult = await UserModel.updateOne({ "Email.Email": Email }, { "Email.Verified": true })
+
+      //if already updated
+      if (NewUpdatedResult.modifiedCount == 0) throw ("Didn't update the information!")
+
+      res.status(202).json({
+         message: "Verified OTP successfully!"
       })
 
 
-  }catch(error){
-      res.status(400).json({ 
+   } catch (error) {
+      res.status(400).json({
          message: "Unable to verify the otp", error
-       })
-  }
+      })
+   }
 }
 
-const HandlePasswordReset=async(req,res)=>{
-   try{
-      let {Email}=req.body
+const HandlePasswordReset = async (req, res) => {
+   try {
+      let { Email } = req.body
 
       //check if we had get the email1 or not
-      if(!Email) throw("Invalid data! Please pass the email.")
-      
+      if (!Email) throw ("Invalid data! Please pass the email.")
+
       //check if user is registered
-      let ExistUser = UserModel.findOne({"Email.Email":Email})
+      let ExistUser = UserModel.findOne({ "Email.Email": Email })
 
       //if user not exist
-      if(!ExistUser)throw("Unregistered User! Please register first.")
+      if (!ExistUser) throw ("Unregistered User! Please register first.")
 
       //generate otp
-      let passotp =Math.floor((Math.random() * 9000) + 1000)
+      let passotp = Math.floor((Math.random() * 9000) + 1000)
 
       //Save OTP in Redis for 5 mins
       await redisClient.set(`resetpassword.${Email}`, passotp, 300)
-      
+
       //send otp in email
       let SendasswordResetEmail = await transporter.sendMail({
          from: process.env.USER_EMAIL,
@@ -159,46 +161,102 @@ const HandlePasswordReset=async(req,res)=>{
 
       res.status(200).json({ message: "Password reset otp is sent!" })
 
-   }catch(error){
-        res.status(400).json({ message: "Unable to send the otp for reseting the password!", error })
+   } catch (error) {
+      res.status(400).json({ message: "Unable to send the otp for reseting the password!", error })
    }
 }
 
-let HandlePasswordResetOtp=async(req,res)=>{
-   try{
-     //take email otp newpass from body
-     let {Email,passotp,NewPassword}=req.body
-     
-     //check if all fields are present
-     if(!Email ||!passotp||!NewPassword)throw("Please pass all the required info that is Email,Otp and new password")
+let HandlePasswordResetOtp = async (req, res) => {
+   try {
+      //take email otp newpass from body
+      let { Email, passotp, NewPassword } = req.body
 
-     //check if user exist
-     let PresentUser= await UserModel.findOne({"Email.Email":Email})
-     if(!PresentUser)throw ("Invalid User! User didn't exist.")
+      //check if all fields are present
+      if (!Email || !passotp || !NewPassword) throw ("Please pass all the required info that is Email,Otp and new password")
 
-     //validate otp 
+      //check if user exist
+      let PresentUser = await UserModel.findOne({ "Email.Email": Email })
+      if (!PresentUser) throw ("Invalid User! User didn't exist.")
+
+      //validate otp 
       let passwordotp = await redisClient.get(`resetpassword.${Email}`)
-      if(!passwordotp)throw("Expired OTP!")
-      if(passwordotp!=passotp)throw("Incorrect OTP!")
+      if (!passwordotp) throw ("Expired OTP!")
+      if (passwordotp != passotp) throw ("Incorrect OTP!")
 
-     //hash password
-     let NewHashPassword = await bcrypt.hash(NewPassword, 12)
+      //hash password
+      let NewHashPassword = await bcrypt.hash(NewPassword, 12)
 
-     //update the password
-     let UpdatePassword = await UserModel.updateOne(
-            { "Email.Email": Email },
-            { $set: { Password: NewHashPassword } }
-        )
-     
-   //if already updated
-       if (UpdatePassword.modifiedCount == 0) throw("Didn't update the information!")
+      //update the password
+      let UpdatePassword = await UserModel.updateOne(
+         { "Email.Email": Email },
+         { $set: { Password: NewHashPassword } }
+      )
 
-    //sending response
-     res.status(200).json({ message: "Verified new password!" })
-   }catch(error){
-       res.status(400).json({ 
+      //if already updated
+      if (UpdatePassword.modifiedCount == 0) throw ("Didn't update the information!")
+
+      //sending response
+      res.status(200).json({ message: "Verified new password!" })
+   } catch (error) {
+      res.status(400).json({
          message: "Unable to reset password!", error
-       })
+      })
    }
 }
-export { PostUserRegister , HandleEmailOtp ,HandlePasswordReset,HandlePasswordResetOtp}
+const HandleLogin = async (request, response) => {
+   try {
+      //take email and pass from req body
+      let { Email, Password } = request.body
+      //check if we have received the email and password
+      if (!Email || !Password) throw ("Please provide your email and password for login into your account!")
+      //check if the email exist
+      let existuser = await UserModel.findOne({ "Email.Email": Email })
+      //if user not exist
+      if (!existuser) throw ("Invalid email please register your email first!")
+      //if user exist 
+      //check whether the password is correct by using compare method from bcrypt
+      let ComparePassword = await bcrypt.compare(Password, existuser.Password)
+      //if compared password is wrong
+
+      if (!ComparePassword) throw ("Incorrect password!")
+
+
+      // Payload
+      let tokenPayload = {
+         Email: existuser.Email.Email, // database me stored email field
+         Name: existuser.Name
+      }
+
+      // Token options
+      let options = {
+         expiresIn: '6h'
+      }
+
+      // Generate token
+      let token = await jwt.sign(tokenPayload, process.env.JWT_SECRET_TOKEN, options)
+
+      // Send response
+      response.status(202).json({ message: "Login was successful!", token })
+
+
+
+   } catch (error) {
+      console.log("Unable to login :", error)
+      response.status(400).json({ message: "Login failed !", error })
+   }
+}
+const GetUserDetails = async (request, response) => {
+    try {
+         //take user info from req
+        let user = request.user
+        //check if user is valid
+        if (!user) throw ("no user was setup !")
+        
+        response.status(200).json({ message: "got user data !", user })
+
+    }catch (err) {
+        response.status(400).json({message : "cannot send user data at this time !",err})
+    }
+}
+
+export { PostUserRegister, HandleEmailOtp, HandlePasswordReset, HandlePasswordResetOtp, HandleLogin,GetUserDetails }
