@@ -1,0 +1,12 @@
+
+function App() {
+  return (
+    
+      <div>
+         <h1>Hello</h1>
+         <h2>This is my vite react app</h2>
+      </div>
+  )
+}
+
+export default App
