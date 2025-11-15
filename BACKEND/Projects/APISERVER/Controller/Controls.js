@@ -96,7 +96,7 @@ const FilteredLanguages = async (request, response) => {
 
         //filtering by scope
         if (scope) {
-            let ScopeBasedData = await LanguageModel.find({ scope: scope })
+            let ScopeBasedData = await LanguageModel.find({ scope: { $elemMatch: { $eq: scope } }})//elem match 
             FiltersUsed += " scope "
             response.status(200).json({
                 message: `Successfully fetched the data based on the ${scope}`, ScopeBasedData
@@ -110,7 +110,7 @@ const FilteredLanguages = async (request, response) => {
             })
         }
         if (difficulty) {
-            let DifficultyBasedData = await LanguageModel.find({ difficulty: difficulty })
+           
             FiltersUsed = " difficulty"
             // Allowed enum values list
             const allowedDifficulties = ["Beginner", "Intermediate", "Advanced"];
@@ -121,6 +121,7 @@ const FilteredLanguages = async (request, response) => {
                     message: `Invalid difficulty value: ${difficulty}. Allowed values are ${allowedDifficulties}.`, FiltersUsed
                 });
             }
+            let DifficultyBasedData = await LanguageModel.find({ difficulty: difficulty })
             response.status(200).json({
                 message: `Successfully fetched the data based on the ${difficulty}`, DifficultyBasedData
             })
