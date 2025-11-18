@@ -1,4 +1,5 @@
-import { react } from "react"
+import React from "react"
+
 function Component1(){
     return <>
       <div id="com1">

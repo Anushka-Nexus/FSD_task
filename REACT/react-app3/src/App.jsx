@@ -1,0 +1,22 @@
+import { useState } from 'react'
+import "../node_modules/bootstrap/dist/css/bootstrap.css"
+import "../node_modules/bootstrap/dist/js/bootstrap.bundle.js"
+import './Stylesheet/index.scss'
+import Com1 from './Components/component1.jsx'
+import Comp2 from './Components/component2.jsx'
+function App() {
+  return <>
+    <div>
+      <div>
+           <h3>this is app.jsx page content</h3>
+      </div>
+      <Com1 />
+      <Comp2 />
+      <div className="btn btn-primary p-4">
+          Click Me
+        </div>
+    </div>
+  </>
+}
+
+export default App
