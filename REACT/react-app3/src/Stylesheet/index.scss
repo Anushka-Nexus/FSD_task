@@ -1,6 +1,6 @@
 
 *{
-    background-color: rgb(101, 173, 101);
+    background-color: rgb(201, 145, 213);
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 #com1{
@@ -18,7 +18,14 @@
         left: 50%;
         transform:translate(-50%,-50%) ;
         >h2{
-            color: rgb(81, 17, 17);
+            color: rgb(47, 17, 81);
         }
     }
+}
+
+#com3{
+    height: 500px;
+    width: 400px;
+
+   
 }
