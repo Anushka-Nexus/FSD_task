@@ -5,7 +5,7 @@ import './Stylesheet/index.scss'
 import Com1 from './Components/component1.jsx'
 import Comp2 from './Components/component2.jsx'
 import Comp3 from './Components/component3.jsx'
-
+import Comp4 from './Components/component4.jsx'
 
 function App() {
   let [toShow, setToShow] = useState(false)
@@ -48,6 +48,7 @@ function App() {
       }
     </div>
     <Comp3 />
+    <Comp4 />
   </>
 }
 
