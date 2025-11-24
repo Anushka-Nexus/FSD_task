@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import { DisplayEntry } from "./Entry.jsx"
 
 let passwordregex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*])[A-Za-z\d!@#$%^&*]{8,}$/
 
@@ -57,27 +58,21 @@ function Comp4() {
         })
     }
 
-    function DisplayEntry(item, index) {
-        return (
-            <tr key={index} className="bg-gray-400">
-                <th scope="row" className="px-5 py-5 font-2xl">
-                    {item.name}
-                </th>
-                <td className="px-6 py-4">
-                    {item.phone}
-                </td>
-                <td className="px-6 py-4">
-                    {item.email}
-                </td>
-                <td className="px-6 py-4">
-                    {item.address}
-                </td>
-                <td className="px-6 py-4">
-                    {item.password}
-                </td>
-            </tr>
-        )
-    }
+    useEffect(() => {
+     console.log("UseEffect hook is initiated")
+    },[FormData])
+    //     useEffect is a React Hook used to run side effects in functional components.
+    // Side effects are things that happen outside the normal UI rendering.
+
+    // Common Side Effects
+
+    // Fetching data from an API
+
+    // Updating the DOM manually
+
+    // Setting timers (setTimeout, setInterval)
+
+    // Adding or removing event listeners
     return <>
         <form action="" className="flex flex-col gap-3 w-2/5 ms-40 mt-10">
             <input type="text" onChange={HandleInputData} className="p-3.5 bg-yellow-100 focus:outline-none border border-yellow-600  rounded-lg" placeholder="Enter your Name" name="name" value={Form.name} />
@@ -124,11 +119,15 @@ function Comp4() {
                                 <th className="px-4 py-4" scope="col">Password</th>
                             </tr>
                         </thead>
-                         <tbody>
-                                {
-                                    FormData.map(DisplayEntry)
-                                }
-                            </tbody>
+                        <tbody>
+                            {
+                                FormData.map(
+                                    (item) => {
+                                        return <DisplayEntry displayeditem={item} />
+                                    }
+                                )
+                            }
+                        </tbody>
                     </table>
             }
         </div>
