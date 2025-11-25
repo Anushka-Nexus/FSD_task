@@ -2,6 +2,8 @@ import express from "express"
 import dotenv from "dotenv"
 import {route} from "./Routers/router.js"
 import "./Database/connection.js"
+import cors from "cors"
+
 import { RootController} from "./Controller/RootControls.js"
 const app= express()
 //instance of express
@@ -14,6 +16,14 @@ dotenv.config({ path: "./config.env" });
  app.use(express.static("Public"))
  //app.use middleware lagane ke liye use hota hai
  app.use(express.json())
+
+ let CORSOPTION ={
+  origin:"*",method:"*"
+ }
+  
+ 
+ 
+ app.use(cors(CORSOPTION))
 
  app.use(express.urlencoded({extended:true}))
  //form data read
